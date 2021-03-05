@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="HandOfFate2"
+run/main_scene="res://cardRoom/MainDealer.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=600
+window/size/height=480
 
 [rendering]
 

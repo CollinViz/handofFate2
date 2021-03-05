@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cardRoom/MainDealer.gd" type="Script" id=2]
+
+[node name="MainDealer" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Card" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1.5874, -1.5874 )
+scale = Vector2( 0.75, 0.75 )
+CardText = "Arow
+of"
+CardSelectFunc = "select"
+
+[node name="Card2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 88.8945, -1.5874 )
+scale = Vector2( 0.75, 0.75 )
+CardText = "Big
+Ax"
+CardSelectFunc = "select"
