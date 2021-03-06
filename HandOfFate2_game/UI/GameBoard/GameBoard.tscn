@@ -1,0 +1,173 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/GameBoard/GameBoard.gd" type="Script" id=1]
+[ext_resource path="res://AllCards/Cards/Card.tscn" type="PackedScene" id=2]
+[ext_resource path="res://AllCards/BoardCard/BoardCard.tscn" type="PackedScene" id=3]
+
+[node name="GameBoard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="Node2D" parent="."]
+
+[node name="Control" parent="Line1" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="Control2" parent="Line1" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.303
+margin_top = 50.0
+margin_right = 112.503
+margin_bottom = 50.08
+
+[node name="Control3" parent="Line1" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 173.752
+margin_top = 50.08
+margin_right = 173.952
+margin_bottom = 50.16
+
+[node name="Control4" parent="Line1" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.32
+margin_top = 50.16
+margin_right = 237.52
+margin_bottom = 50.24
+
+[node name="Line2" type="Node2D" parent="."]
+position = Vector2( 0, 66.7462 )
+
+[node name="Control" parent="Line2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="Control2" parent="Line2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.303
+margin_top = 50.0
+margin_right = 112.503
+margin_bottom = 50.08
+
+[node name="Control3" parent="Line2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 173.752
+margin_top = 50.08
+margin_right = 173.952
+margin_bottom = 50.16
+
+[node name="Control4" parent="Line2" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.32
+margin_top = 50.16
+margin_right = 237.52
+margin_bottom = 50.24
+
+[node name="Line3" type="Node2D" parent="."]
+position = Vector2( 0, 131.373 )
+
+[node name="Control" parent="Line3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="Control2" parent="Line3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.303
+margin_top = 50.0
+margin_right = 112.503
+margin_bottom = 50.08
+
+[node name="Control3" parent="Line3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 173.752
+margin_top = 50.08
+margin_right = 173.952
+margin_bottom = 50.16
+
+[node name="Control4" parent="Line3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.32
+margin_top = 50.16
+margin_right = 237.52
+margin_bottom = 50.24
+
+[node name="Line4" type="Node2D" parent="."]
+position = Vector2( 0, 194.941 )
+
+[node name="Control" parent="Line4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 50.0
+margin_bottom = 50.0
+
+[node name="Control2" parent="Line4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 112.303
+margin_top = 50.0
+margin_right = 112.503
+margin_bottom = 50.08
+
+[node name="Control3" parent="Line4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 173.752
+margin_top = 50.08
+margin_right = 173.952
+margin_bottom = 50.16
+
+[node name="Control4" parent="Line4" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 237.32
+margin_top = 50.16
+margin_right = 237.52
+margin_bottom = 50.24
+
+[node name="Card" parent="." instance=ExtResource( 2 )]
+margin_left = 331.612
+margin_top = 50.0
+margin_right = 331.812
+margin_bottom = 51.72
+[connection signal="cardClick" from="Line1/Control" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line1/Control2" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line1/Control3" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line1/Control4" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line2/Control" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line2/Control2" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line2/Control3" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line2/Control4" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line3/Control" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line3/Control2" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line3/Control3" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line3/Control4" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line4/Control" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line4/Control2" to="." method="_on_Control_cardClick"]
+[connection signal="cardClick" from="Line4/Control3" to="." method="_on_Control_cardClick"]

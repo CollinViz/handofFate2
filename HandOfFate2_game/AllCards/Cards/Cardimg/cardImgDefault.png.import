@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4_weapon_hammer_modified.png-f62cf8d99cf2366247e23abca67a6080.stex"
+path="res://.import/cardImgDefault.png-a0ab71e925b397bd8636aaccce6fd4c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/4_weapon_hammer_modified.png"
-dest_files=[ "res://.import/4_weapon_hammer_modified.png-f62cf8d99cf2366247e23abca67a6080.stex" ]
+source_file="res://AllCards/Cards/Cardimg/cardImgDefault.png"
+dest_files=[ "res://.import/cardImgDefault.png-a0ab71e925b397bd8636aaccce6fd4c0.stex" ]
 
 [params]
 

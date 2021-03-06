@@ -1,21 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/CardGambit/CardGambit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cardRoom/MainDealer.gd" type="Script" id=2]
+[ext_resource path="res://UI/PlayerResources/UIPlayerResourses.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/GameBoard/GameBoard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PlayerPawn/PlayerPawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DialogSystem/DialogSystem.tscn" type="PackedScene" id=6]
 
-[node name="MainDealer" type="Node2D"]
+[node name="MainDealer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Card" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1.5874, -1.5874 )
-scale = Vector2( 0.75, 0.75 )
-CardText = "Arow
-of"
-CardSelectFunc = "select"
+[node name="PlayerRecorce" parent="." instance=ExtResource( 3 )]
+margin_left = 1.33484
+margin_top = 418.03
+margin_right = 1.33484
+margin_bottom = 418.03
 
-[node name="Card2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 88.8945, -1.5874 )
-scale = Vector2( 0.75, 0.75 )
-CardText = "Big
-Ax"
-CardSelectFunc = "select"
+[node name="CardGambit" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="GameBoard" parent="." instance=ExtResource( 4 )]
+margin_left = 118.794
+margin_top = 53.7402
+margin_right = 118.794
+margin_bottom = 53.7402
+
+[node name="PlayerPawn" parent="." instance=ExtResource( 5 )]
+
+[node name="PlayerMove" type="Tween" parent="."]
+
+[node name="DialogSystem" parent="." instance=ExtResource( 6 )]
+[connection signal="CardGambitDone" from="CardGambit" to="." method="_on_CardGambit_CardGambitDone"]
+[connection signal="PlayerPawnMoveTo" from="GameBoard" to="." method="_on_GameBoard_PlayerPawnMoveTo"]
+[connection signal="PlayerPawnStart" from="GameBoard" to="." method="_on_GameBoard_PlayerPawnStart"]

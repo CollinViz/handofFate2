@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AllCards/PlayerResource/ResourceCard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/PlayerResources/UIPlayerResourses.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gold" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.568
+anchor_bottom = 0.39
+margin_left = 230.658
+margin_right = -0.142029
+margin_bottom = -0.200012
+CardText = "Gold"
+CurrentValue = 20
+
+[node name="Food" parent="." instance=ExtResource( 1 )]
+margin_left = 116.107
+margin_right = 226.107
+rect_pivot_offset = Vector2( 51.2503, 100.107 )
+CardText = "Food"
+CurrentValue = 20
+
+[node name="Heath" parent="." instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_right = 110.0
+rect_pivot_offset = Vector2( 52.6319, 90.3951 )
+CardText = "Health"
+CurrentValue = 80
+MaxValue = 100
+ShowMax = true

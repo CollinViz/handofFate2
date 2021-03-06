@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://AllCards/BoardCard/boardFront.png" type="Texture" id=1]
+[ext_resource path="res://AllCards/BoardCard/BoardCard.gd" type="Script" id=2]
+[ext_resource path="res://AllCards/BoardCard/boardBack.png" type="Texture" id=3]
+[ext_resource path="res://Assests/light.png" type="Texture" id=4]
+
+[node name="BoardCard" type="Control"]
+anchor_right = 0.083
+anchor_bottom = 0.104
+margin_right = 0.199997
+margin_bottom = 0.079998
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardFront" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Active" type="Light2D" parent="CardFront"]
+position = Vector2( 28.6055, 26.4866 )
+scale = Vector2( 0.271937, 0.235428 )
+texture = ExtResource( 4 )
+
+[node name="CardBack" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="CardFront" to="." method="_on_Card_gui_input"]
+[connection signal="gui_input" from="CardBack" to="." method="_on_Card_gui_input"]

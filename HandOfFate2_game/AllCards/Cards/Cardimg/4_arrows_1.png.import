@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4_arrows_1.png-6eee0b6949d0e1fecadac0e33ae9f0e5.stex"
+path="res://.import/4_arrows_1.png-86c07be61e3305fedae7ad9cf33f957a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/4_arrows_1.png"
-dest_files=[ "res://.import/4_arrows_1.png-6eee0b6949d0e1fecadac0e33ae9f0e5.stex" ]
+source_file="res://AllCards/Cards/Cardimg/4_arrows_1.png"
+dest_files=[ "res://.import/4_arrows_1.png-86c07be61e3305fedae7ad9cf33f957a.stex" ]
 
 [params]
 

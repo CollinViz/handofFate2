@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4_weapon_sword.png-6a547d8da7f926295bf2eee39e59f1fe.stex"
+path="res://.import/boardBack.png-96778273b34926de56f1a8f84b194390.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cards/4_weapon_sword.png"
-dest_files=[ "res://.import/4_weapon_sword.png-6a547d8da7f926295bf2eee39e59f1fe.stex" ]
+source_file="res://AllCards/BoardCard/boardBack.png"
+dest_files=[ "res://.import/boardBack.png-96778273b34926de56f1a8f84b194390.stex" ]
 
 [params]
 

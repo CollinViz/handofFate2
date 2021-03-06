@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DialogSystem/Question/Question.gd" type="Script" id=1]
+[ext_resource path="res://DialogSystem/Profile/Character_Sample_modified.png" type="Texture" id=2]
+
+[node name="Question" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 64.0
+
+[node name="Talking1" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 600.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
+text = "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 600.0
+margin_bottom = 112.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterContainer"]
+margin_left = 209.0
+margin_right = 390.0
+margin_bottom = 44.0
+
+[node name="Label" type="Button" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 181.0
+margin_bottom = 20.0
+text = "Move closer to eavesdrop."
+
+[node name="Label2" type="Button" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 181.0
+margin_bottom = 44.0
+text = "Keep your distance"

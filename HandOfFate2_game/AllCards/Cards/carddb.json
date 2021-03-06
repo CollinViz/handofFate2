@@ -1,0 +1,304 @@
+{
+  "Heath": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Heath",
+    "type": "Resource",
+    "ResourceType": "Heath",
+    "ResourceValue": 10
+  },
+  "Food": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Food",
+    "type": "Resource",
+    "ResourceType": "Food",
+    "ResourceValue": 10
+  },
+  "Gold": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Gold",
+    "type": "Resource",
+    "ResourceType": "Gold",
+    "ResourceValue": 10
+  },
+  "HeathDown": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Heath",
+    "type": "Resource",
+    "ResourceType": "Heath",
+    "ResourceValue": -10
+  },
+  "FoodDown": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Food",
+    "type": "Resource",
+    "ResourceType": "Food",
+    "ResourceValue": -10
+  },
+  "GoldDown": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Gold",
+    "type": "Resource",
+    "ResourceType": "Gold",
+    "ResourceValue": -10
+  },
+  "Success": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Success",
+    "type": "Gambits"
+  },
+  "HugeSuccess": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Huge Success",
+    "type": "Gambits"
+  },
+  "Failure": {
+    "img": "4_weapon_sword.png 4",
+    "Text": "Failure",
+    "type": "Gambits"
+  },
+  "HugeFailure": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Huge Failure",
+    "type": "Gambits"
+  },
+  "Arrows": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Arrows",
+    "type": "Equipment"
+  },
+  "Throwing": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Throwing",
+    "type": "Equipment"
+  },
+  "Axe": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Axe",
+    "type": "Equipment"
+  },
+  "Hammer": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Hammer",
+    "type": "Equipment"
+  },
+  "Sword": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Sword",
+    "type": "Equipment"
+  },
+  "ForestAmbush": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Forest Ambush",
+    "type": "Encounters",
+    "Encounters": [
+      {
+        "Type": "Question",
+        "Text": [
+          "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
+        ],
+        "Answers": [
+          {
+            "Text": "Move closer to eavesdrop.",
+            "Actions": [
+              {
+                "Action": "CardGambits",
+                "CardGambits": {
+                  "Cards": [
+                    "Success",
+                    "Success",
+                    "Success",
+                    "Failure"
+                  ],
+                  "Success": {
+                    "Action": "Skip",
+                    "Skip": "2"
+                  },
+                  "Failure": {
+                    "Action": "Skip",
+                    "Skip": "3"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "Text": "Keep your distance",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "Creeping forward, you overhear their leader spouting orders.",
+          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
+          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
+          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
+          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "2"
+          }
+        ]
+      },
+      {
+        "Type": "Question",
+        "Text": [
+          "The thieves fell the tree into the path of the unsuspecting farmers and leap out, weapons brandished.\n\n\"Give us all your food!\""
+        ],
+        "Answers": [
+          {
+            "Text": "Leap to the farmers’ defence",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "3"
+              }
+            ]
+          },
+          {
+            "Text": "Offer to help the farmers, warning them it won’t come for free.",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "4"
+              }
+            ]
+          },
+          {
+            "Text": "Help the Thieves with their extortion.",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "5"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "You draw your weapon with practiced skill.",
+          "\"Well,\" you hear the leader's voice, \"you lads handle this. I'll meet you when you're done.\""
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "6"
+          }
+        ]
+      },
+      {
+        "Type": "Question",
+        "Answers": [
+          {
+            "Text": "Accept",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "3"
+              }
+            ]
+          },
+          {
+            "Text": "Ask for more.",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "8"
+              }
+            ]
+          }
+        ],
+        "Text": [
+          "\"We have no gold!\" shriek the terrified farmers, \"but half our crop is yours if you protect us.\"",
+          "The thieves eye you nervously. The farmers look at you hopefully."
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "2"
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "You take your place beside the thieves, glowering. The farmers quickly size you up, decide that discretion is the better part of valour, and flee.",
+          "As you reach for a share of the spoils, you realize you're surrounded.",
+          "You can't just turn up and take what's rightfully ours,\" barks one of the thugs.\nYeah, you didn't even help chop the tree down!\"",
+          "You draw your weapon with practiced skill.\n\"Well,\" you hear the leader's voice, \"you lads handle this. I'll meet you when you're done.\""
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "7"
+          }
+        ]
+      },
+      {
+        "Combat": "type1",
+        "Type": "Combat",
+        "Success": {
+          "Action": "Skip",
+          "Skip": "2"
+        },
+        "Failure": {
+          "Action": "Skip",
+          "Skip": "3"
+        }
+      },
+      {
+        "Combat": "type2",
+        "Type": "Combat",
+        "Success": {
+          "Action": "Skip",
+          "Skip": "2"
+        },
+        "Failure": {
+          "Action": "Skip",
+          "Skip": "3"
+        }
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "\"More! You're as much of a scoundrel as they are, if not worse. At least they do not hide behind honour!\" The farmers have the gall to spit at your feet before running away.",
+          "As you reach for a share of the spoils, you realize you're surrounded.",
+          "You can't just turn up and take what's rightfully ours,\" barks one of the thugs.\nYeah, you didn't even help chop the tree down!\"",
+          "You draw your weapon with practiced skill.",
+          "Well,\" you hear the leader's voice, \"you lads handle this. I'll meet you when you're done.\""
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "7"
+          }
+        ]
+      }
+    ]
+  },
+  "AFriendInNeed": {
+    "img": "cardImgDefault.png 5",
+    "Text": "A Friend in Need",
+    "type": "Encounters"
+  },
+  "FindingForestFolk": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Finding Forest Folk",
+    "type": "Encounters"
+  },
+  "TheLeader": {
+    "img": "cardImgDefault.png 5",
+    "Text": "The Leader",
+    "type": "Encounters"
+  }
+}
