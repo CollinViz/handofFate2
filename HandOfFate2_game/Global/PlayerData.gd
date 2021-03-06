@@ -15,8 +15,15 @@ signal UpdateResource
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	randomize()
+	NewGame()
 
+func NewGame():
+	PlayerGold=10
+	PlayerFood=5
+	PlayerHeath=100
+	PlayerHeathMax=100
+	emit_signal("UpdateResource")
 
 func LoadCardData()->void:
 	print("Load Json %s" % jsonFile)
@@ -52,7 +59,10 @@ func ManageCardEvent(CardInfo)->bool:
 func _manageResource(CardInfo)->bool:
 	match CardInfo.ResourceType:
 		"Food":
-			PlayerFood+=CardInfo.ResourceValue			 
+			PlayerFood+=CardInfo.ResourceValue	
+			if PlayerFood<=0:
+				PlayerFood=0
+				PlayerHeath+=-10	 
 		"Heath":
 			PlayerHeath+=CardInfo.ResourceValue
 			if PlayerHeath>PlayerHeathMax:

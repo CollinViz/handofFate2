@@ -195,12 +195,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Card4" parent="." instance=ExtResource( 2 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 265.0
+margin_left = 445.0
 margin_top = 147.0
-margin_right = -335.0
+margin_right = -155.0
 margin_bottom = -333.0
 CardType = "Failure"
 CardSelect = false
@@ -208,9 +215,9 @@ CardSelectFunc = "gambit"
 AutoFlipOnClick = true
 
 [node name="Card3" parent="." instance=ExtResource( 2 )]
-margin_left = 265.0
+margin_left = 326.0
 margin_top = 147.0
-margin_right = 155.2
+margin_right = 216.2
 margin_bottom = -38.28
 CardType = "Success"
 CardSelect = false
@@ -218,9 +225,9 @@ CardSelectFunc = "gambit"
 AutoFlipOnClick = true
 
 [node name="Card2" parent="." instance=ExtResource( 2 )]
-margin_left = 265.0
+margin_left = 203.0
 margin_top = 147.0
-margin_right = 155.2
+margin_right = 93.2
 margin_bottom = -38.28
 CardType = "Success"
 CardSelect = false
@@ -228,9 +235,9 @@ CardSelectFunc = "gambit"
 AutoFlipOnClick = true
 
 [node name="Card" parent="." instance=ExtResource( 2 )]
-margin_left = 265.0
+margin_left = 78.0
 margin_top = 147.0
-margin_right = 155.2
+margin_right = -31.8
 margin_bottom = -38.28
 CardType = "Success"
 CardSelect = false
@@ -240,7 +247,6 @@ AutoFlipOnClick = true
 [node name="DoSort" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-autostart = true
 
 [node name="CardsAnims" type="AnimationPlayer" parent="."]
 autoplay = "default"

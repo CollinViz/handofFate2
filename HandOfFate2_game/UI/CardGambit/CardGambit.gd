@@ -5,6 +5,7 @@ extends Control
 # var a = 2
 # var b = "text"
 export var ListOfCardName:=["Success","Success","Success","Failure"]
+export var ActionsOutCome={}
 
 signal CardGambitDone(result)
 
@@ -16,7 +17,7 @@ func _ready():
 
 func gambit(cardInfo)->void:
 	yield(get_tree().create_timer(1), "timeout")
-	emit_signal("CardGambitDone",cardInfo.Text)
+	emit_signal("CardGambitDone",ActionsOutCome[cardInfo.Text])
 
 func switchtoBack():
 	ListOfCardName.shuffle()
@@ -55,3 +56,8 @@ func _on_CardsAnims_animation_finished(anim_name):
 
 func _on_revelCard_timeout():
 	pass # Replace with function body.
+
+func showGambit():
+	$CardsAnims.play("default")
+	self.visible =true;
+	$DoSort.start()

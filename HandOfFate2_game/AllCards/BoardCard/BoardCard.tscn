@@ -27,6 +27,7 @@ __meta__ = {
 position = Vector2( 28.6055, 26.4866 )
 scale = Vector2( 0.271937, 0.235428 )
 texture = ExtResource( 4 )
+energy = 0.5
 
 [node name="CardBack" type="TextureRect" parent="."]
 margin_right = 40.0

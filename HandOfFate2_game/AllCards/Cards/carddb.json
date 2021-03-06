@@ -151,7 +151,7 @@
       {
         "Type": "Question",
         "Text": [
-          "The thieves fell the tree into the path of the unsuspecting farmers and leap out, weapons brandished.\n\n\"Give us all your food!\""
+          "The thieves fell the tree into the path of the unsuspecting farmers and leap out, weapons brandished.\n\"Give us all your food!\""
         ],
         "Answers": [
           {
@@ -219,8 +219,7 @@
           }
         ],
         "Text": [
-          "\"We have no gold!\" shriek the terrified farmers, \"but half our crop is yours if you protect us.\"",
-          "The thieves eye you nervously. The farmers look at you hopefully."
+          "\"We have no gold!\" shriek the terrified farmers, \"but half our crop is yours if you protect us.\"\nThe thieves eye you nervously. The farmers look at you hopefully."
         ],
         "Actions": [
           {
@@ -289,16 +288,70 @@
   "AFriendInNeed": {
     "img": "cardImgDefault.png 5",
     "Text": "A Friend in Need",
-    "type": "Encounters"
+    "type": "Encounters",
+    "Encounters":[
+      {
+        "Type": "Story",
+        "Text": [
+          "Creeping forward, you overhear their leader spouting orders.",
+          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
+          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
+          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
+          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
+        ],
+        "Actions": [
+          {
+            "Action": "Done"
+            
+          }
+        ]
+      }
+    ]
   },
   "FindingForestFolk": {
     "img": "cardImgDefault.png 5",
     "Text": "Finding Forest Folk",
-    "type": "Encounters"
+    "type": "Encounters",
+    "Encounters":[
+      {
+        "Type": "Story",
+        "Text": [
+          "Creeping forward, you overhear their leader spouting orders.",
+          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
+          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
+          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
+          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
+        ],
+        "Actions": [
+          {
+            "Action": "Done"
+            
+          }
+        ]
+      }
+    ]
   },
   "TheLeader": {
     "img": "cardImgDefault.png 5",
     "Text": "The Leader",
-    "type": "Encounters"
+    "type": "Encounters",
+    "Encounters":[
+      {
+        "Type": "Story",
+        "Text": [
+          "Creeping forward, you overhear their leader spouting orders.",
+          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
+          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
+          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
+          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
+        ],
+        "Actions": [
+          {
+            "Action": "Done"
+            
+          }
+        ]
+      }
+    ]
   }
 }
