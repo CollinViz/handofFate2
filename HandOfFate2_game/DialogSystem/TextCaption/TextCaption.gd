@@ -2,7 +2,7 @@ extends Control
 
 onready var Talking1:TextureRect = $Panel/VBoxContainer/HBoxContainer/Talking1
 onready var StoryText:RichTextLabel =$Panel/VBoxContainer/HBoxContainer/StoryText
-onready var NextButton:Button =$Panel/VBoxContainer/Button
+onready var NextButton:Button =$Panel/VBoxContainer/HBoxContainer2/Button
 
 export var ActionsOutCome={}
 export var aStoryText:=[]

@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var DealerScene = load("res://cardRoom/MainDealer.tscn")
+onready var DealerScene = load("res://2DStratOnCombat/ForestAmbush/ForestAmbush.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

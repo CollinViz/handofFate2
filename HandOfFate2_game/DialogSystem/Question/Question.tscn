@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://DialogSystem/Question/Question.gd" type="Script" id=1]
 [ext_resource path="res://DialogSystem/Profile/Character_Sample_modified.png" type="Texture" id=2]
+[ext_resource path="res://DialogSystem/Question/Spacer.png" type="Texture" id=3]
 
 [node name="Question" type="Control"]
 anchor_right = 1.0
@@ -14,14 +15,16 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.5
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
+anchor_bottom = 0.367
 margin_right = 28.0
-margin_bottom = 68.0
+margin_bottom = -20.08
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,7 +41,7 @@ texture = ExtResource( 2 )
 
 [node name="StoryText" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
 margin_left = 68.0
-margin_right = 628.0
+margin_right = 579.0
 margin_bottom = 64.0
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -47,17 +50,23 @@ bbcode_enabled = true
 bbcode_text = "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
 text = "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
 
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 583.0
+margin_right = 628.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+
 [node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
 margin_top = 68.0
 margin_right = 628.0
-margin_bottom = 68.0
+margin_bottom = 88.0
 
 [node name="OptionsList" type="VBoxContainer" parent="Panel/VBoxContainer/CenterContainer"]
-margin_left = 314.0
-margin_right = 314.0
+margin_left = 223.0
+margin_right = 404.0
+margin_bottom = 20.0
 
 [node name="Option1" type="Button" parent="Panel/VBoxContainer/CenterContainer/OptionsList"]
-visible = false
 margin_right = 181.0
 margin_bottom = 20.0
 text = "Move closer to eavesdrop."
