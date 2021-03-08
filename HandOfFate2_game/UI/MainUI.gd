@@ -5,6 +5,7 @@ onready var DealerScene = load("res://2DStratOnCombat/ForestAmbush/ForestAmbush.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	var _x = PlayerData.connect("CardsLoaded",self,"_CardsLoaded")
 	PlayerData.LoadCardData()
 

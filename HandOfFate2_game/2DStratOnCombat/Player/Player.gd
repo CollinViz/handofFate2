@@ -5,22 +5,37 @@ extends Actor
 # var a = 2
 # var b = "text"
 
+onready var PlayerFSM = $PlayerFSM
 
+var _isAnimationPlaying = false
+
+var TargetingEnemy:Actor = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerFSM.set_state(PlayerFSM.states.idle)
 	pass # Replace with function body.
 
-func _input(event):
-	if event.is_action_pressed("Doge"):
-		$AnimatedSprite.play("Dash")
-	if event.is_action_pressed("Counter"):
-		$AnimatedSprite.play("Counter") 
-	if event.is_action_pressed("attack_heavy"):
-		$AnimatedSprite.play("HeavyAttack") 
-	if event.is_action_pressed("attack_light"):
-		$AnimatedSprite.play("LightAttack") 
+ 
+func takeDamage(NumDamage):
+	match PlayerFSM.state:
+		PlayerFSM.states.Doge:
+			if NumDamage<=25:
+				return
+		PlayerFSM.states.Hit:			
+				return
+		PlayerFSM.states.Counter:
+			if NumDamage<=25:
+				return
+		PlayerFSM.states.Block:
+			return
 
-
+	Aggro = true
+	HitPoints-=NumDamage
+	if HitPoints<=0:
+		PlayerFSM.set_state(PlayerFSM.states.Dead)
+	else:
+		PlayerFSM.set_state(PlayerFSM.states.Hit)
+	PlayerData.takeDamage(NumDamage,HitPoints,MaxHitPoints)
 func _physics_process(_delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
@@ -37,16 +52,7 @@ func _physics_process(_delta: float) -> void:
 		_velocity, snap, FLOOR_NORMAL, true
 	)
 	
-	if Input.is_action_pressed("Block"):
-		if FacingDirection==1:
-			$ShieldLeft.visible=true
-			$ShieldRight.visible = false
-		else:
-			$ShieldLeft.visible=false
-			$ShieldRight.visible = true
-	if Input.is_action_just_released("Block"):
-		$ShieldLeft.visible=false
-		$ShieldRight.visible = false
+	
 		
 func get_direction() -> Vector2:
 	return Vector2(
@@ -68,15 +74,90 @@ func calculate_move_velocity(
 		velocity.y = 0.0
 	return velocity
 
+func isAnimationPlaying()->bool:
+	#print("isAnimationPlaying %s %s %s" % [_isAnimationPlaying,$AnimatedSprite.animation,$AnimatedSprite.is_playing()])
+	if $AnimatedSprite.animation!="Idel":
+		return _isAnimationPlaying
+	_isAnimationPlaying = false
+	return false
 
 func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.animation !="Idel":
-		$AnimatedSprite.play("Idel")
+	_isAnimationPlaying = false
+	PlayerFSM.AnimationStopped($AnimatedSprite.animation)
+	
 
 
 func _on_HitLeft_body_entered(body):
-	pass # Replace with function body.
+	if FacingDirection==1:
+		if body.has_method("takeDamage") and body.is_in_group("enemy"):
+			TargetingEnemy = body 
 
 
 func _on_HitRight_body_entered(body):
-	pass # Replace with function body.
+	if FacingDirection==2:
+		if body.has_method("takeDamage") and body.is_in_group("enemy"):
+			TargetingEnemy = body
+
+func _on_HitLeft_body_exited(body):
+	if FacingDirection==1:
+		if body.has_method("takeDamage") and body.is_in_group("enemy") :
+			TargetingEnemy = null
+func _on_HitRight_body_exited(body):
+	if FacingDirection==2:
+		if body.has_method("takeDamage") and body.is_in_group("enemy"):
+			TargetingEnemy = null
+
+
+
+
+
+func DealDamage(BaseDamage):
+	if TargetingEnemy!=null:
+		PlayerData.AddMultiply(1)
+		print(" Damage %d" %int(BaseDamage * (1 + (PlayerData.PlayerMultiply/100))))
+		TargetingEnemy.takeDamage(int(BaseDamage * (1 + (PlayerData.PlayerMultiply/100))))
+	else:
+		print("No Target")
+
+func DoHeavyAttack():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("HeavyAttack") 
+	DealDamage(50)
+func DoLightAttack():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("LightAttack") 
+	DealDamage(25)
+func DoDoge():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("Dash") 
+func DoCounter():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("Counter") 
+func DoIdle():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("Idel") 
+func DoHit():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("Hit") 
+func DoDead():
+	_isAnimationPlaying = true
+	$AnimatedSprite.play("Dead") 
+func DoBlock():
+	$AnimatedSprite.play("Idel") 
+	if FacingDirection==1:
+		$ShieldLeft.visible=true
+		$ShieldRight.visible = false
+	else:
+		$ShieldLeft.visible=false
+		$ShieldRight.visible = true
+func RemoveBlock():	
+	$ShieldLeft.visible=false
+	$ShieldRight.visible = false
+	
+func StopAnimationReset():
+	_isAnimationPlaying = false
+	$AnimatedSprite.play("Idel") 
+	$AnimatedSprite.stop()
+
+
+

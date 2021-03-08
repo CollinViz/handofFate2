@@ -8,9 +8,12 @@ var PlayerGold:=0
 var PlayerFood:=0
 var PlayerHeath:=0
 var PlayerHeathMax:=100
+var PlayerMultiply:=0
 
 signal CardsLoaded 
 signal UpdateResource 
+signal PlayerDamage 
+signal PlayerMultiply 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -73,3 +76,16 @@ func _manageResource(CardInfo)->bool:
 			return false
 	emit_signal("UpdateResource")
 	return true
+
+func takeDamage(_NumDamage,HitPoints,MaxHitPoints):
+	if HitPoints<=0:
+		HitPoints=0
+	PlayerHeath = HitPoints
+	PlayerHeathMax = MaxHitPoints
+	PlayerMultiply=0
+	emit_signal("PlayerDamage")
+	emit_signal("PlayerMultiply")
+
+func AddMultiply(value:int) ->void:
+	PlayerMultiply+=value
+	emit_signal("PlayerMultiply")

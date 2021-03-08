@@ -21,3 +21,4 @@ tile_data = PoolIntArray( 131091, 0, 0, 393206, 0, 0, 327699, 0, 1, 458727, 0, 6
 [node name="Thief" parent="." index="2" instance=ExtResource( 3 )]
 speed = Vector2( 150, 150 )
 gravity = 2050.0
+Aggro = true
