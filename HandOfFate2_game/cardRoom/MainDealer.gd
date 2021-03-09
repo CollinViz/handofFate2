@@ -11,7 +11,7 @@ var _CurrentEncounter :=[]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	pass
+	var _p = PlayerData.connect("EndCombat",self,"_CombatResoled")
  
 func select(cardInfo)->void:	
 	if PlayerData.ManageCardEvent(cardInfo) == false:		 
@@ -19,14 +19,21 @@ func select(cardInfo)->void:
 		pass
 
 
+func _CombatResoled(Outcome:String,CombatOptions):
+	ResoleAnswer(CombatOptions[Outcome])
+	pass
 
-
-func _on_CardGambit_CardGambitDone(Answer):
-	$CardGambit.visible=false
+func ResoleAnswer(Answer):
 	match Answer.Action: 
+		"CardGambits":
+			_showCardGambit(Answer)
 		"Skip":
 			if Answer.Skip.is_valid_integer():
 				_MoveToEncounterIndex(int(Answer.Skip))
+
+func _on_CardGambit_CardGambitDone(Answer):
+	$CardGambit.visible=false
+	ResoleAnswer(Answer)
 
 
 func _on_GameBoard_PlayerPawnStart(node):
@@ -54,12 +61,8 @@ func _on_GameBoard_PlayerPawnMoveTo(node):
 
 func _on_DialogSystem_questionAnswer(Answer):
 	_hideAllUI()
-	match Answer[0].Action:
-		"CardGambits":
-			_showCardGambit(Answer)
-		"Skip":
-			if Answer[0].Skip.is_valid_integer():
-				_MoveToEncounterIndex(int(Answer[0].Skip))
+	ResoleAnswer(Answer[0])
+	 
 
 func _MoveToEncounterIndex(Index:int) ->void:
 	_hideAllUI()
@@ -69,11 +72,11 @@ func _MoveToEncounterIndex(Index:int) ->void:
 		"Story":
 			DialogSystem.ShowStory(_CurrentEncounter[Index].Text,_CurrentEncounter[Index].Actions)
 		"Combat":
-			print("Combat")
+			PlayerData.StartCombat(0,_CurrentEncounter[Index])
 
 func _showCardGambit(Answer):
-	$CardGambit.ListOfCardName = Answer[0].CardGambits.Cards as Array
-	$CardGambit.ActionsOutCome = Answer[0].CardGambits
+	$CardGambit.ListOfCardName = Answer.CardGambits.Cards as Array
+	$CardGambit.ActionsOutCome = Answer.CardGambits
 	$CardGambit.showGambit()
 	
 
@@ -83,9 +86,5 @@ func _hideAllUI():
 
 func _on_DialogSystem_StoryDone(Actions):
 	_hideAllUI()
-	match Actions.Action:
-		"CardGambits":
-			_showCardGambit(Actions)
-		"Skip":
-			if Actions.Skip.is_valid_integer():
-				_MoveToEncounterIndex(int(Actions.Skip))
+	ResoleAnswer(Actions)
+	 

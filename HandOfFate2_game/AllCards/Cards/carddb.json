@@ -86,6 +86,21 @@
     "Text": "Sword",
     "type": "Equipment"
   },
+  "SoldiersSword": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Soldier's Sword",
+    "type": "Equipment"
+  },
+  "WarriorsAxe": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Warriors Axe",
+    "type": "Equipment"
+  },
+  "Shield": {
+    "img": "cardImgDefault.png 5",
+    "Text": "Shield",
+    "type": "Equipment"
+  },
   "ForestAmbush": {
     "img": "cardImgDefault.png 5",
     "Text": "Forest Ambush",
@@ -248,11 +263,11 @@
         "Type": "Combat",
         "Success": {
           "Action": "Skip",
-          "Skip": "2"
+          "Skip": "9"
         },
         "Failure": {
           "Action": "Skip",
-          "Skip": "3"
+          "Skip": "10"
         }
       },
       {
@@ -260,11 +275,11 @@
         "Type": "Combat",
         "Success": {
           "Action": "Skip",
-          "Skip": "2"
+          "Skip": "11"
         },
         "Failure": {
           "Action": "Skip",
-          "Skip": "3"
+          "Skip": "11"
         }
       },
       {
@@ -282,6 +297,54 @@
             "Skip": "7"
           }
         ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "The farmers fumble in their haversacks in gratitude. “Thank you, adventurer. I’m sure that after they took our food they would have taken our lives as well.”",
+          "You fall on the food with a sigh, shoveling bread in your mouth to quell your hunger.",
+          "Your satisfaction lasts only a moment before you realise your father’s amulet is not among the takings."
+        ],
+        "Actions": [
+          {
+            "Action": "boon",
+            "boon": "cards",
+            "Cards": [
+              "Food",
+              "Food"
+            ]
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "Combat is difficalte for this game jam new need to work with combat"
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "9"
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "You end up alone in the forest, surrounded by a fallen tree, a pile of bodies, and some food.",
+          "You fall on the food with a sigh, shoveling bread in your mouth to quell your hunger.",
+          "Your satisfaction lasts only a moment before you realise your father’s amulet is not among the takings."
+        ],
+        "Actions": [
+          {
+            "Action": "boon",
+            "boon": "cards",
+            "Cards": [
+              "Food",
+              "Food"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -289,53 +352,129 @@
     "img": "cardImgDefault.png 5",
     "Text": "A Friend in Need",
     "type": "Encounters",
-    "Encounters":[
+    "Encounters": [
       {
         "Type": "Story",
         "Text": [
-          "Creeping forward, you overhear their leader spouting orders.",
-          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
-          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
-          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
-          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
+          "While enjoying a moment beside the fire, you spy a strange figure approaching your camp. It’s a goblin, dressed in what must pass for goblin-finery.",
+          "From beneath a filthy fox pelt serving as an ill-fitting wig, the goblin winks at you with wild red eyes.",
+          "“Aha! I’ve been roaming for hours trying to find you. We must get this over with quickly if I have any hope of getting to all the people on my list before sunrise.”",
+          "It lowers a sack from its shoulder. “Now, from within my sack I can conjure whatever your heart desires…”",
+          "The goblin’s voice trails off as he examines his sack. “Well, I could, if there wasn’t a blooming great big hole in it!”",
+          "His head disappears entirely into the bag and his bulbous nose protrudes from the breach. ",
+          "“A new plan, then.” The goblin pulls out his last trinkets."
+        ],
+        "Actions": [
+          {
+            "Action": "CardSelect",
+            "CardSelect": [
+              "SoldiersSword",
+              "WarriorsAxe",
+              "Shield"
+            ],
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "“A wise choice! Now I must go - there are many others I must visit before I can rest.”",
+          "The goblin runs off into the night, his fox-wig glamping in the evening breeze."
         ],
         "Actions": [
           {
             "Action": "Done"
-            
           }
         ]
       }
     ]
   },
   "FindingForestFolk": {
-    "img": "cardImgDefault.png 5",
-    "Text": "Finding Forest Folk",
-    "type": "Encounters",
-    "Encounters":[
-      {
-        "Type": "Story",
-        "Text": [
-          "Creeping forward, you overhear their leader spouting orders.",
-          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
-          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
-          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
-          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
-        ],
-        "Actions": [
-          {
-            "Action": "Done"
-            
+  "img": "cardImgDefault.png 5",
+  "Text": "Finding Forest Folk",
+  "type": "Encounters",
+  "Encounters": [
+    {
+      "Type": "Story",
+      "Text": [
+        "This card has a token. Can you find it?"
+      ],
+      "Actions": [
+        {
+          "Action": "Skip",
+          "Skip": "1"
+        }
+      ]
+    },
+    {
+      "Type": "Story",
+      "Text": [
+        "Your journey through a forest is interrupted by an inquisitive child. “Are you searching for the Forest Folk? My uncle says that they used to walk these woods giving out gifts, I want to find one and ask for a lemon cake.”",
+        "As they dash off to peer under a nearby log, the child shouts back, “Remember, if you meet the Forest Folk, get me a lemon cake.”",
+        "In the other direction an eerie song hangs in the air. You attempt to find its origin."
+      ],
+      "Actions": [
+        {
+          "Action": "CardGambits",
+          "CardGambits": {
+            "Cards": [
+              "Success",
+              "Success",
+              "Success",
+              "Failure"
+            ],
+            "Success": {
+              "Action": "Skip",
+              "Skip": "2"
+            },
+            "Failure": {
+              "Action": "Skip",
+              "Skip": "3"
+            }
           }
-        ]
-      }
-    ]
-  },
+        }
+      ]
+    },
+    {
+      "Type": "Story",
+      "Text": [
+        "You follow the song through thicket and stream until you find an open glade bathed in golden sunlight. You find an aged maiden, her posture bent like the boughs of the forest.",
+        "“It has been 12 winters since I had a visitor.” Her voice is a whisper, yet it thunders in your ears. “You may visit me when you are in need, adventurer.”"
+      ],
+      "Actions": [
+        {
+          "Action": "boon",
+          "boon": "token",
+          "token": [
+            "tocken1"
+          ]
+        }
+      ]
+    },
+    {
+      "Type": "Story",
+      "Text": [
+        "You get lost so sade"
+      ],
+      "Actions": [
+        {
+          "Action": "Done"
+        }
+      ]
+    }
+  ]
+},
   "TheLeader": {
     "img": "cardImgDefault.png 5",
     "Text": "The Leader",
     "type": "Encounters",
-    "Encounters":[
+    "Encounters": [
       {
         "Type": "Story",
         "Text": [
@@ -348,7 +487,6 @@
         "Actions": [
           {
             "Action": "Done"
-            
           }
         ]
       }

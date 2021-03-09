@@ -17,7 +17,7 @@ var _velocity: = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
 
-func takeDamage(NumDamage):
+func takeDamage(NumDamage,_FromObj):
 	Aggro = true
 	HitPoints-=NumDamage
 	if HitPoints<=0:

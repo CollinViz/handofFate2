@@ -8,5 +8,12 @@
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
 
 [node name="PlayerUI" parent="." instance=ExtResource( 3 )]
+
+[node name="AllEnemies" type="Node2D" parent="."]
+
+[node name="checkAllEnenies" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="checkAllEnenies" to="." method="_on_checkAllEnenies_timeout"]

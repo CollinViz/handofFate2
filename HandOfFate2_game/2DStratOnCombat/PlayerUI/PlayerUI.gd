@@ -10,6 +10,7 @@ extends CanvasLayer
 func _ready():
 	var _x = PlayerData.connect("PlayerDamage",self,"_PlayerDamage")
 	var _t = PlayerData.connect("PlayerMultiply",self,"_PlayerMultiply")
+	_PlayerDamage()
 
 
 func _PlayerDamage():

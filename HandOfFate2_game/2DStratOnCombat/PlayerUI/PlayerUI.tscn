@@ -22,14 +22,14 @@ __meta__ = {
 
 [node name="PlayerHeath" type="Label" parent="Control/HBoxContainer"]
 margin_top = 11.0
-margin_right = 41.0
+margin_right = 37.0
 margin_bottom = 29.0
-text = "90/100"
+text = "??/??"
 
 [node name="PlayerMultyply" type="Label" parent="Control/HBoxContainer"]
-margin_left = 45.0
+margin_left = 41.0
 margin_top = 11.0
-margin_right = 110.0
+margin_right = 106.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 text = "Multyply:"

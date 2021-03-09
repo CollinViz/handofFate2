@@ -16,17 +16,21 @@ func _ready():
 	pass # Replace with function body.
 
  
-func takeDamage(NumDamage):
+func takeDamage(NumDamage,_FromObj):
 	match PlayerFSM.state:
 		PlayerFSM.states.Doge:
 			if NumDamage<=25:
+				print("Light Attach dogged")
 				return
-		PlayerFSM.states.Hit:			
+		PlayerFSM.states.Hit:
+				print("Already hit cannot take damage")			
 				return
 		PlayerFSM.states.Counter:
 			if NumDamage<=25:
+				print("Counter need to give damage to attacher ")
 				return
 		PlayerFSM.states.Block:
+			print("Flat block")
 			return
 
 	Aggro = true
@@ -112,12 +116,25 @@ func _on_HitRight_body_exited(body):
 
 
 func DealDamage(BaseDamage):
+	 
 	if TargetingEnemy!=null:
 		PlayerData.AddMultiply(1)
-		print(" Damage %d" %int(BaseDamage * (1 + (PlayerData.PlayerMultiply/100))))
-		TargetingEnemy.takeDamage(int(BaseDamage * (1 + (PlayerData.PlayerMultiply/100))))
+		print(" Damage %d" %int(BaseDamage * (1 + (float( PlayerData.PlayerMultiply)/100))))
+		TargetingEnemy.takeDamage(int(BaseDamage * (1 + (float(PlayerData.PlayerMultiply)/100))),self)
 	else:
-		print("No Target")
+		if FacingDirection==1:
+			_FindSomething2Hit($LeftRay,BaseDamage)
+		else:
+			_FindSomething2Hit($RightRay,BaseDamage) 
+
+func _FindSomething2Hit(Ray:RayCast2D,BaseDamage)->void:
+	Ray.force_raycast_update()
+	if Ray.is_colliding():
+		var body = Ray.get_collider()
+		if body.has_method("takeDamage") and body.is_in_group("enemy"):
+			TargetingEnemy = body
+			DealDamage(BaseDamage) 
+
 
 func DoHeavyAttack():
 	_isAnimationPlaying = true
@@ -140,6 +157,7 @@ func DoHit():
 	_isAnimationPlaying = true
 	$AnimatedSprite.play("Hit") 
 func DoDead():
+	PlayerData.EndCombat("Failure",get_parent().getOptions())
 	_isAnimationPlaying = true
 	$AnimatedSprite.play("Dead") 
 func DoBlock():

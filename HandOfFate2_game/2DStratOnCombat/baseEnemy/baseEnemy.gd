@@ -61,7 +61,7 @@ func isAnimationPlaying()->bool:
 	return false
 
 
-func takeDamage(NumDamage):
+func takeDamage(NumDamage,_FromObj):
 	FSM.set_state(FSM.states.Hit)
 	Aggro = true
 	HitPoints-=NumDamage
@@ -69,7 +69,7 @@ func takeDamage(NumDamage):
 		Dead()
 func DealDamage(BaseDamage):	
 	if TargetingPlayer!=null:
-		TargetingPlayer.takeDamage(BaseDamage)
+		TargetingPlayer.takeDamage(BaseDamage,self)
 		$AttackTimer.start(3)
 
 func DoIdle():

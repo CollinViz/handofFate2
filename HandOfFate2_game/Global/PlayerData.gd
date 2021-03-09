@@ -14,6 +14,8 @@ signal CardsLoaded
 signal UpdateResource 
 signal PlayerDamage 
 signal PlayerMultiply 
+signal StartCombat(CombatIndex,CombatOptions) 
+signal EndCombat(Outcome,CombatOptions) 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -89,3 +91,10 @@ func takeDamage(_NumDamage,HitPoints,MaxHitPoints):
 func AddMultiply(value:int) ->void:
 	PlayerMultiply+=value
 	emit_signal("PlayerMultiply")
+
+func StartCombat(CombatIndex:int,CombatOptions):
+	emit_signal("StartCombat",CombatIndex,CombatOptions)
+
+
+func EndCombat(Outcome:String,CombatOptions):
+	emit_signal("EndCombat",Outcome,CombatOptions)
