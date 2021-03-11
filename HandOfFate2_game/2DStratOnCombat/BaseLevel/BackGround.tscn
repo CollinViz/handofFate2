@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://2DStratOnCombat/BaseLevel/Cursed_Kingdoms_-_ruins.png" type="Texture" id=1]
+
+[node name="BackGround" type="ParallaxBackground"]
+
+[node name="Back1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="Back1"]
+position = Vector2( -1145.02, -551.29 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+centered = false

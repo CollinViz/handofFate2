@@ -13,7 +13,7 @@ var PlayerMultiply:=0
 signal CardsLoaded 
 signal UpdateResource 
 signal PlayerDamage 
-signal PlayerMultiply 
+signal PlayerMultiply  
 signal StartCombat(CombatIndex,CombatOptions) 
 signal EndCombat(Outcome,CombatOptions) 
 
@@ -98,3 +98,5 @@ func StartCombat(CombatIndex:int,CombatOptions):
 
 func EndCombat(Outcome:String,CombatOptions):
 	emit_signal("EndCombat",Outcome,CombatOptions)
+
+ 

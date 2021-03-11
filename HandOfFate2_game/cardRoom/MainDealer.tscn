@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/CardGambit/CardGambit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cardRoom/MainDealer.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://UI/GameBoard/GameBoard.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerPawn/PlayerPawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://DialogSystem/DialogSystem.tscn" type="PackedScene" id=6]
+[ext_resource path="res://PlayerPawn/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/CardSelect/CardSelect.tscn" type="PackedScene" id=9]
 
 [node name="MainDealer" type="Control"]
 anchor_right = 1.0
@@ -15,11 +17,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
 [node name="PlayerRecorce" parent="." instance=ExtResource( 3 )]
 margin_left = 1.33484
-margin_top = 418.03
+margin_top = 387.03
 margin_right = 1.33484
-margin_bottom = 418.03
+margin_bottom = 387.03
 
 [node name="GameBoard" parent="." instance=ExtResource( 4 )]
 margin_left = 118.794
@@ -36,8 +40,12 @@ visible = false
 
 [node name="CardGambit" parent="." instance=ExtResource( 1 )]
 visible = false
+
+[node name="CardSelect" parent="." instance=ExtResource( 9 )]
+visible = false
 [connection signal="PlayerPawnMoveTo" from="GameBoard" to="." method="_on_GameBoard_PlayerPawnMoveTo"]
 [connection signal="PlayerPawnStart" from="GameBoard" to="." method="_on_GameBoard_PlayerPawnStart"]
 [connection signal="StoryDone" from="DialogSystem" to="." method="_on_DialogSystem_StoryDone"]
 [connection signal="questionAnswer" from="DialogSystem" to="." method="_on_DialogSystem_questionAnswer"]
 [connection signal="CardGambitDone" from="CardGambit" to="." method="_on_CardGambit_CardGambitDone"]
+[connection signal="CardSelectDone" from="CardSelect" to="." method="_on_CardSelect_CardSelectDone"]

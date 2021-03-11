@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_-_swoosh_10.ogg-ad84aa87389e517d5ac2820439aa06c9.oggstr"
+
+[deps]
+
+source_file="res://2DStratOnCombat/Player/SFX_-_swoosh_10.ogg"
+dest_files=[ "res://.import/SFX_-_swoosh_10.ogg-ad84aa87389e517d5ac2820439aa06c9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

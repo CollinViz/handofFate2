@@ -5,6 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "DoSort"
+length = 0.6
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -12,7 +13,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -29,7 +30,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 203, 147 ), Vector2( 265, 147 ) ]
@@ -41,7 +42,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 78, 147 ), Vector2( 265, 147 ) ]
@@ -53,7 +54,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 445, 147 ), Vector2( 265, 147 ) ]
@@ -65,7 +66,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 326, 147 ), Vector2( 265, 147 ) ]
@@ -73,6 +74,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "MoveBack"
+length = 0.6
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -80,7 +82,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -94,7 +96,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 265, 147 ), Vector2( 203, 147 ) ]
@@ -106,7 +108,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 265, 147 ), Vector2( 78, 147 ) ]
@@ -118,7 +120,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 265, 147 ), Vector2( 445, 147 ) ]
@@ -130,7 +132,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 265, 147 ), Vector2( 326, 147 ) ]
@@ -202,12 +204,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_right = 1.0
+margin_top = 27.0
+margin_bottom = 74.0
+bbcode_enabled = true
+bbcode_text = "[center]Select a card to determine the outcome[/center]"
+text = "Select a card to determine the outcome"
+
 [node name="Card4" parent="." instance=ExtResource( 2 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 445.0
+margin_left = 265.0
 margin_top = 147.0
-margin_right = -155.0
+margin_right = -335.0
 margin_bottom = -333.0
 CardType = "Failure"
 CardSelect = false
@@ -215,9 +225,9 @@ CardSelectFunc = "gambit"
 AutoFlipOnClick = true
 
 [node name="Card3" parent="." instance=ExtResource( 2 )]
-margin_left = 326.0
+margin_left = 265.0
 margin_top = 147.0
-margin_right = 216.2
+margin_right = 155.2
 margin_bottom = -38.28
 CardType = "Success"
 CardSelect = false
@@ -225,9 +235,9 @@ CardSelectFunc = "gambit"
 AutoFlipOnClick = true
 
 [node name="Card2" parent="." instance=ExtResource( 2 )]
-margin_left = 203.0
+margin_left = 265.0
 margin_top = 147.0
-margin_right = 93.2
+margin_right = 155.2
 margin_bottom = -38.28
 CardType = "Success"
 CardSelect = false
@@ -235,9 +245,9 @@ CardSelectFunc = "gambit"
 AutoFlipOnClick = true
 
 [node name="Card" parent="." instance=ExtResource( 2 )]
-margin_left = 78.0
+margin_left = 265.0
 margin_top = 147.0
-margin_right = -31.8
+margin_right = 155.2
 margin_bottom = -38.28
 CardType = "Success"
 CardSelect = false

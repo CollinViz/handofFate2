@@ -21,11 +21,6 @@ extents = Vector2( 23.8666, 26.4835 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 1 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "Attack_Heavy",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "Dead",
@@ -44,6 +39,11 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Attack_Heavy",
 "speed": 5.0
 } ]
 
@@ -89,7 +89,7 @@ texture = ExtResource( 13 )
 script = ExtResource( 15 )
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
 [connection signal="body_entered" from="HitLeft" to="." method="_on_HitLeft_body_entered"]

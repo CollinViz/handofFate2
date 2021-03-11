@@ -10,13 +10,14 @@ onready var PlayerFSM = $PlayerFSM
 var _isAnimationPlaying = false
 
 var TargetingEnemy:Actor = null
+var lastDamageType=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PlayerFSM.set_state(PlayerFSM.states.idle)
 	pass # Replace with function body.
 
  
-func takeDamage(NumDamage,_FromObj):
+func takeDamage(NumDamage,FromObj):
 	match PlayerFSM.state:
 		PlayerFSM.states.Doge:
 			if NumDamage<=25:
@@ -27,7 +28,9 @@ func takeDamage(NumDamage,_FromObj):
 				return
 		PlayerFSM.states.Counter:
 			if NumDamage<=25:
+				PlayerData.AddMultiply(1)
 				print("Counter need to give damage to attacher ")
+				FromObj.takeDamage(int(25 * (1 + (float(PlayerData.PlayerMultiply)/100))),self)				
 				return
 		PlayerFSM.states.Block:
 			print("Flat block")
@@ -118,7 +121,8 @@ func _on_HitRight_body_exited(body):
 func DealDamage(BaseDamage):
 	 
 	if TargetingEnemy!=null:
-		PlayerData.AddMultiply(1)
+		if lastDamageType != PlayerFSM.state:
+			PlayerData.AddMultiply(1)
 		print(" Damage %d" %int(BaseDamage * (1 + (float( PlayerData.PlayerMultiply)/100))))
 		TargetingEnemy.takeDamage(int(BaseDamage * (1 + (float(PlayerData.PlayerMultiply)/100))),self)
 	else:
@@ -136,7 +140,8 @@ func _FindSomething2Hit(Ray:RayCast2D,BaseDamage)->void:
 			DealDamage(BaseDamage) 
 
 
-func DoHeavyAttack():
+func DoHeavyAttack():	
+	$bigHit.play()
 	_isAnimationPlaying = true
 	$AnimatedSprite.play("HeavyAttack") 
 	DealDamage(50)

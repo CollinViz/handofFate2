@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_-_positive_10.ogg-35ae8fce05e6a9d3404056958308b142.oggstr"
+
+[deps]
+
+source_file="res://2DStratOnCombat/SFX_-_positive_10.ogg"
+dest_files=[ "res://.import/SFX_-_positive_10.ogg-35ae8fce05e6a9d3404056958308b142.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

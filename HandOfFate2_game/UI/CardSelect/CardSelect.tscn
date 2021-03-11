@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AllCards/Cards/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/CardSelect/CardSelect.gd" type="Script" id=2]
+
+[node name="CardSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Card" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.742
+margin_top = 147.0
+margin_right = 120.742
+margin_bottom = 147.0
+CardType = "SoldiersSword"
+CardSelectFunc = "selectCard"
+
+[node name="Card2" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 265.0
+margin_top = 147.0
+margin_right = 265.0
+margin_bottom = 147.0
+CardType = "WarriorsAxe"
+CardSelectFunc = "selectCard"
+
+[node name="Card3" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 404.0
+margin_top = 147.0
+margin_right = 404.0
+margin_bottom = 147.0
+CardType = "Shield"
+CardSelectFunc = "selectCard"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 267.138
+margin_top = 85.9106
+margin_right = 517.138
+margin_bottom = 125.911
+text = "Select one Card"
+__meta__ = {
+"_edit_use_anchors_": false
+}

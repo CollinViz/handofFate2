@@ -1,68 +1,82 @@
 {
   "Heath": {
-    "img": "cardImgDefault.png 5",
+    "img": "heart.png 8",
     "Text": "Heath",
     "type": "Resource",
     "ResourceType": "Heath",
     "ResourceValue": 10
   },
   "Food": {
-    "img": "cardImgDefault.png 5",
+    "img": "backpack.png 6",
     "Text": "Food",
     "type": "Resource",
     "ResourceType": "Food",
     "ResourceValue": 10
   },
+  "Food6": {
+    "img": "backpack.png 6",
+    "Text": "Food",
+    "type": "Resource",
+    "ResourceType": "Food",
+    "ResourceValue": 6
+  },
+  "Food5": {
+    "img": "backpack.png 6",
+    "Text": "Food",
+    "type": "Resource",
+    "ResourceType": "Food",
+    "ResourceValue": 5
+  },
   "Gold": {
-    "img": "cardImgDefault.png 5",
+    "img": "coin.png 7",
     "Text": "Gold",
     "type": "Resource",
     "ResourceType": "Gold",
     "ResourceValue": 10
   },
   "HeathDown": {
-    "img": "cardImgDefault.png 5",
+    "img": "heart.png 8",
     "Text": "Heath",
     "type": "Resource",
     "ResourceType": "Heath",
     "ResourceValue": -10
   },
   "FoodDown": {
-    "img": "cardImgDefault.png 5",
+    "img": "backpack.png 6",
     "Text": "Food",
     "type": "Resource",
     "ResourceType": "Food",
     "ResourceValue": -10
   },
   "GoldDown": {
-    "img": "cardImgDefault.png 5",
+    "img": "coin.png 7",
     "Text": "Gold",
     "type": "Resource",
     "ResourceType": "Gold",
     "ResourceValue": -10
   },
   "Success": {
-    "img": "cardImgDefault.png 5",
+    "img": "56.png 19",
     "Text": "Success",
     "type": "Gambits"
   },
   "HugeSuccess": {
-    "img": "cardImgDefault.png 5",
+    "img": "56.png 19",
     "Text": "Huge Success",
     "type": "Gambits"
   },
   "Failure": {
-    "img": "4_weapon_sword.png 4",
+    "img": "57.png 20",
     "Text": "Failure",
     "type": "Gambits"
   },
   "HugeFailure": {
-    "img": "cardImgDefault.png 5",
+    "img": "57.png 20",
     "Text": "Huge Failure",
     "type": "Gambits"
   },
   "Arrows": {
-    "img": "cardImgDefault.png 5",
+    "img": "50.png 18",
     "Text": "Arrows",
     "type": "Equipment"
   },
@@ -72,32 +86,32 @@
     "type": "Equipment"
   },
   "Axe": {
-    "img": "cardImgDefault.png 5",
+    "img": "22.png 13",
     "Text": "Axe",
     "type": "Equipment"
   },
   "Hammer": {
-    "img": "cardImgDefault.png 5",
+    "img": "19.png 11",
     "Text": "Hammer",
     "type": "Equipment"
   },
   "Sword": {
-    "img": "cardImgDefault.png 5",
+    "img": "26.png 14",
     "Text": "Sword",
     "type": "Equipment"
   },
   "SoldiersSword": {
-    "img": "cardImgDefault.png 5",
+    "img": "29.png 15",
     "Text": "Soldier's Sword",
     "type": "Equipment"
   },
   "WarriorsAxe": {
-    "img": "cardImgDefault.png 5",
+    "img": "21.png 12",
     "Text": "Warriors Axe",
     "type": "Equipment"
   },
   "Shield": {
-    "img": "cardImgDefault.png 5",
+    "img": "3.png 9",
     "Text": "Shield",
     "type": "Equipment"
   },
@@ -310,8 +324,13 @@
             "Action": "boon",
             "boon": "cards",
             "Cards": [
-              "Food",
-              "Food"
+              "Food5",
+              "Food6"
+            ],
+            "Actions": [
+              {
+                "Action": "Done"
+              }
             ]
           }
         ]
@@ -319,7 +338,7 @@
       {
         "Type": "Story",
         "Text": [
-          "Combat is difficalte for this game jam new need to work with combat"
+          "Combat is difficult for this game jam -new- need to work with combat"
         ],
         "Actions": [
           {
@@ -340,8 +359,13 @@
             "Action": "boon",
             "boon": "cards",
             "Cards": [
-              "Food",
-              "Food"
+              "Food6",
+              "Food5"
+            ],
+            "Actions": [
+              {
+                "Action": "Done"
+              }
             ]
           }
         ]
@@ -385,7 +409,7 @@
         "Type": "Story",
         "Text": [
           "“A wise choice! Now I must go - there are many others I must visit before I can rest.”",
-          "The goblin runs off into the night, his fox-wig glamping in the evening breeze."
+          "The goblin runs off into the night, his fox-wig flapping in the evening breeze."
         ],
         "Actions": [
           {
@@ -452,7 +476,12 @@
           "Action": "boon",
           "boon": "token",
           "token": [
-            "tocken1"
+            "token1"
+          ],
+          "Actions": [
+            {
+              "Action": "Done"
+            }
           ]
         }
       ]
@@ -460,7 +489,7 @@
     {
       "Type": "Story",
       "Text": [
-        "You get lost so sade"
+        "You get lost--so sad"
       ],
       "Actions": [
         {
@@ -487,6 +516,47 @@
         "Actions": [
           {
             "Action": "Done"
+          }
+        ]
+      }
+    ]
+  },
+  "IntroCardRoom":{
+    "img": "cardImgDefault.png 5",
+    "Text": "Intro Card Room",
+    "type": "Encounters",
+    "Encounters": [
+      {
+        "Type": "Story",
+        "Text": [
+          "Your memories are fading even now; gone to form the soul of the game we play.  These pieces are new, as are the stakes: life, death , and vengeance.",
+          "We must ride; for the time is short and you have much to learn. Make your first choice and let us set these wheels in motion once more.",
+          "These cards represent your history and our game. We know where they end; you are here. ",
+          "Therefore these cards must guide you to my side. Let us see what the journey holds."
+        ],
+        "Actions": [
+          {
+            "Action": "Done",
+            "Skip": "1"
+          }
+        ]
+      }
+    ]
+  },
+  "TheFool":{
+    "img": "cardImgDefault.png 5",
+    "Text": "The Fool",
+    "type": "Encounters",
+    "Encounters": [
+      {
+        "Type": "Story",
+        "Text": [
+          "The fool steps into nothingness, because they know no better. In the same way, you must step into the void. You are a blank slate, and together, we will write your history."
+        ],
+        "Actions": [
+          {
+            "Action": "Done",
+            "Skip": "1"
           }
         ]
       }

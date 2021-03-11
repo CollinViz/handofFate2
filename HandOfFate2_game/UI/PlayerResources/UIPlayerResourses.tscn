@@ -18,20 +18,17 @@ margin_left = 230.658
 margin_right = -0.142029
 margin_bottom = -0.200012
 CardText = "Gold"
-CurrentValue = 20
 
 [node name="Food" parent="." instance=ExtResource( 1 )]
 margin_left = 116.107
 margin_right = 226.107
 rect_pivot_offset = Vector2( 51.2503, 100.107 )
 CardText = "Food"
-CurrentValue = 20
 
 [node name="Heath" parent="." instance=ExtResource( 1 )]
 margin_left = 0.0
 margin_right = 110.0
 rect_pivot_offset = Vector2( 52.6319, 90.3951 )
 CardText = "Health"
-CurrentValue = 80
 MaxValue = 100
 ShowMax = true

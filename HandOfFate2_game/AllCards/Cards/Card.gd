@@ -56,7 +56,7 @@ func _on_CardFront_gui_input(event:InputEvent):
 		if AutoFlipOnClick:
 			_showCardSide(!CardFace)
 		if CardSelectFunc!="":
-			get_parent().call_deferred(CardSelectFunc,CurrentCardInfo)
+			get_parent().call_deferred(CardSelectFunc,CurrentCardInfo,CardType)
 
 
  

@@ -48,9 +48,10 @@ func selectAttack():
 	if randi() % 3 == 1:
 		DoAttack= FSM.states.HeavyAttack
 		$intent.modulate = intend_heavy
-	DoAttack= FSM.states.LightAttack
-	$intent.modulate = intend_Light
-	$AttackTimer.start(1)
+	else:
+		DoAttack= FSM.states.LightAttack
+		$intent.modulate = intend_Light
+	$AttackTimer.start(0.5)
 	return FSM.states.Aggro_Thinking
 
 func isAnimationPlaying()->bool:
@@ -81,12 +82,12 @@ func DoAggro():
 func DoHeavyAttack():
 	_isAnimationPlaying = true
 	$AnimatedSprite.play("Attack_Heavy")
-	DealDamage(50)
+	DealDamage(25)
 	 
 func DoLightAttack():
 	_isAnimationPlaying = true
 	$AnimatedSprite.play("Attack_Light")
-	DealDamage(25)
+	DealDamage(15)
 	pass
 func DoDoge():
 	_isAnimationPlaying = true

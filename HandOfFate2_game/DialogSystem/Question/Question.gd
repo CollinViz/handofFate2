@@ -22,6 +22,7 @@ func setAnswers(Answer:Array):
 		var b=  Button.new()
 		b.text = "%d. %s" % [index,n.Text]
 		b.flat=true
+		b.align =Button.ALIGN_LEFT
 		b.connect("pressed", self, "_on_Button_pressed",[b,n])
 		OptionsList.add_child(b)
 		index+=1

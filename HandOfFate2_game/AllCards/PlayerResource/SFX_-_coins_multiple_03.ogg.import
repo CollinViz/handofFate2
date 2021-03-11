@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_-_coins_multiple_03.ogg-cc5eda08535bd280a47d442a26c885f9.oggstr"
+
+[deps]
+
+source_file="res://AllCards/PlayerResource/SFX_-_coins_multiple_03.ogg"
+dest_files=[ "res://.import/SFX_-_coins_multiple_03.ogg-cc5eda08535bd280a47d442a26c885f9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

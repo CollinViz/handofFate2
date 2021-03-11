@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_-_swoosh_10.wav-223332dba4c95af9c915beafe486c391.sample"
+
+[deps]
+
+source_file="res://2DStratOnCombat/Player/SFX_-_swoosh_10.wav"
+dest_files=[ "res://.import/SFX_-_swoosh_10.wav-223332dba4c95af9c915beafe486c391.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

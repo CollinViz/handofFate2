@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://DialogSystem/DialogSystem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://IntroCardRoom/IntroCardRoom.gd" type="Script" id=2]
+[ext_resource path="res://IntroCardRoom/Overworld_swamp_01.png" type="Texture" id=3]
+[ext_resource path="res://AllCards/Cards/Card.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Font/MainFont.tres" type="DynamicFont" id=5]
+
+[node name="IntroCardRoom" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -191.132
+margin_top = -24.2148
+margin_right = 441.868
+margin_bottom = 311.785
+rect_scale = Vector2( 2, 2 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogSystem" parent="." instance=ExtResource( 1 )]
+
+[node name="Card" parent="." instance=ExtResource( 4 )]
+margin_left = 50.118
+margin_top = 203.792
+margin_right = 50.3181
+margin_bottom = 205.512
+rect_rotation = -7.7
+rect_pivot_offset = Vector2( 56.1832, 86.677 )
+CardType = "TheFool"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 191.532
+margin_top = 261.731
+margin_right = 571.532
+margin_bottom = 511.731
+rect_scale = Vector2( 1.00241, 0.994732 )
+custom_fonts/normal_font = ExtResource( 5 )
+text = "The fool steps into nothingness, because they know no better. In the same way, you must step into the void. You are a blank slate, and together, we will write your history."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="StoryDone" from="DialogSystem" to="." method="_on_DialogSystem_StoryDone"]
+[connection signal="questionAnswer" from="DialogSystem" to="." method="_on_DialogSystem_questionAnswer"]

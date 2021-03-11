@@ -23,5 +23,12 @@ func getOptions():
 	return CombatOptions
 
 func _on_checkAllEnenies_timeout():	 
-	if $AllEnemies.get_child_count()==0:
-		PlayerData.EndCombat("Success",CombatOptions)
+	if $AllEnemies.get_child_count()==0:		 
+		$checkAllEnenies.stop()
+		$Win.play()
+		#PlayerData.EndCombat("Success",CombatOptions)
+		$AudioStreamPlayer.stop()
+ 
+func _on_Win_finished():
+	$Win.stop()
+	PlayerData.EndCombat("Success",CombatOptions)

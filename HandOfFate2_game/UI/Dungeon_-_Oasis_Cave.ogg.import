@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Dungeon_-_Oasis_Cave.ogg-464a92f2be98d500a392373868f0a2ba.oggstr"
+
+[deps]
+
+source_file="res://UI/Dungeon_-_Oasis_Cave.ogg"
+dest_files=[ "res://.import/Dungeon_-_Oasis_Cave.ogg-464a92f2be98d500a392373868f0a2ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

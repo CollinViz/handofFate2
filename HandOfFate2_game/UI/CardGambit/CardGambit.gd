@@ -15,7 +15,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func gambit(cardInfo)->void:
+func gambit(cardInfo,_CardType)->void:	
 	yield(get_tree().create_timer(1), "timeout")
 	emit_signal("CardGambitDone",ActionsOutCome[cardInfo.Text])
 
@@ -60,4 +60,8 @@ func _on_revelCard_timeout():
 func showGambit():
 	$CardsAnims.play("default")
 	self.visible =true;
+	$Card.CardFace=true
+	$Card2.CardFace=true
+	$Card3.CardFace=true
+	$Card4.CardFace=true
 	$DoSort.start()
