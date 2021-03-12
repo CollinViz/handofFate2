@@ -33,15 +33,15 @@ func _showCardText(value:String) ->void:
 	
 
 func _setCurrentValue(value:int) ->void:
-	var diff =  value-CurrentValue
+	var diff =  value-CurrentValue 
 	print("Change in Value %d %d dif %d" % [CurrentValue,value,diff])
 	if diff!=0:
 		var newFlot = flotationText.instance()
-		newFlot.position = self.rect_global_position
+		newFlot.position = self.rect_global_position + Vector2(80,-25)
 		newFlot.velocity = Vector2(rand_range(-50,50),-100)
-		#newFlot.modulate = Vector2(rand_range(-50,50),-100)
+		newFlot.modulate = Color(176,10,10, 1)
 		newFlot.text = str(diff)
-		add_child(newFlot)
+		get_parent().get_parent().add_child(newFlot)
 	CurrentValue = value
 	_updateCardValue()
 

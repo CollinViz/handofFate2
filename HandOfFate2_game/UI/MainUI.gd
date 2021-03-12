@@ -25,7 +25,8 @@ func _CardsLoaded():
 	#load send
 	#var x = IntroDealer.instance()
 	var x = menu_main_menu.instance()
-	#var x = game_combat_array[0].instance()
+	#var x = DealerScene.instance()
+	#var x = game_combat_array[1].instance()
 	$MainMenu.add_child(x)
 
 func StartGame():

@@ -329,7 +329,8 @@
             ],
             "Actions": [
               {
-                "Action": "Done"
+                "Action": "Skip",
+                "Skip": "12"
               }
             ]
           }
@@ -364,9 +365,22 @@
             ],
             "Actions": [
               {
-                "Action": "Done"
+                "Action": "Skip",
+                "Skip": "12"
               }
             ]
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "Select highlight square to move your player token"
+        ],
+        "Actions": [
+          {
+            "Action": "Done",
+            "Skip": "2"
           }
         ]
       }
@@ -420,102 +434,233 @@
     ]
   },
   "FindingForestFolk": {
-  "img": "cardImgDefault.png 5",
-  "Text": "Finding Forest Folk",
-  "type": "Encounters",
-  "Encounters": [
-    {
-      "Type": "Story",
-      "Text": [
-        "This card has a token. Can you find it?"
-      ],
-      "Actions": [
-        {
-          "Action": "Skip",
-          "Skip": "1"
-        }
-      ]
-    },
-    {
-      "Type": "Story",
-      "Text": [
-        "Your journey through a forest is interrupted by an inquisitive child. “Are you searching for the Forest Folk? My uncle says that they used to walk these woods giving out gifts, I want to find one and ask for a lemon cake.”",
-        "As they dash off to peer under a nearby log, the child shouts back, “Remember, if you meet the Forest Folk, get me a lemon cake.”",
-        "In the other direction an eerie song hangs in the air. You attempt to find its origin."
-      ],
-      "Actions": [
-        {
-          "Action": "CardGambits",
-          "CardGambits": {
-            "Cards": [
-              "Success",
-              "Success",
-              "Success",
-              "Failure"
-            ],
-            "Success": {
-              "Action": "Skip",
-              "Skip": "2"
-            },
-            "Failure": {
-              "Action": "Skip",
-              "Skip": "3"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "Type": "Story",
-      "Text": [
-        "You follow the song through thicket and stream until you find an open glade bathed in golden sunlight. You find an aged maiden, her posture bent like the boughs of the forest.",
-        "“It has been 12 winters since I had a visitor.” Her voice is a whisper, yet it thunders in your ears. “You may visit me when you are in need, adventurer.”"
-      ],
-      "Actions": [
-        {
-          "Action": "boon",
-          "boon": "token",
-          "token": [
-            "token1"
-          ],
-          "Actions": [
-            {
-              "Action": "Done"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Type": "Story",
-      "Text": [
-        "You get lost--so sad"
-      ],
-      "Actions": [
-        {
-          "Action": "Done"
-        }
-      ]
-    }
-  ]
-},
-  "TheLeader": {
     "img": "cardImgDefault.png 5",
-    "Text": "The Leader",
+    "Text": "Finding Forest Folk",
     "type": "Encounters",
     "Encounters": [
       {
         "Type": "Story",
         "Text": [
-          "Creeping forward, you overhear their leader spouting orders.",
-          "\"It’s simple,\" he says. \"The idiots walk down the road, you push over the tree and jump out. They’ll be too scared to put up a fight, and we’ll get rich.\"",
-          "\"Why don’t we just jump our and stab ‘em!” one retorts.\n\nAnother hooded figure chimes in, \"Yeah, corpses don’t put up a fight, either.\"",
-          "Frustration rises in the leader’s voice. \"The Empire doesn’t care if a few farmers lose some sprouts, but drop a corpse on the Royal Road and the place will be filled with soldiers before you’ve even spent the coin. We don’t need that trouble. Now, quiet. Here they come.\"",
-          "You soon spot a group of farmers coming around the corner, bringing their wares to market."
+          "This card has a token. Can you find it?"
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "1"
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "Your journey through a forest is interrupted by an inquisitive child. “Are you searching for the Forest Folk? My uncle says that they used to walk these woods giving out gifts, I want to find one and ask for a lemon cake.”",
+          "As they dash off to peer under a nearby log, the child shouts back, “Remember, if you meet the Forest Folk, get me a lemon cake.”",
+          "In the other direction an eerie song hangs in the air. You attempt to find its origin."
+        ],
+        "Actions": [
+          {
+            "Action": "CardGambits",
+            "CardGambits": {
+              "Cards": [
+                "Success",
+                "Success",
+                "Success",
+                "Failure"
+              ],
+              "Success": {
+                "Action": "Skip",
+                "Skip": "2"
+              },
+              "Failure": {
+                "Action": "Skip",
+                "Skip": "3"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "You follow the song through thicket and stream until you find an open glade bathed in golden sunlight. You find an aged maiden, her posture bent like the boughs of the forest.",
+          "“It has been 12 winters since I had a visitor.” Her voice is a whisper, yet it thunders in your ears. “You may visit me when you are in need, adventurer.”"
+        ],
+        "Actions": [
+          {
+            "Action": "boon",
+            "boon": "token",
+            "token": [
+              "token1"
+            ],
+            "Actions": [
+              {
+                "Action": "Done"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "You spent hours traveling in circles until night falls, bringing an unnatural silence to the forest."
         ],
         "Actions": [
           {
             "Action": "Done"
+          }
+        ]
+      }
+    ]
+  },
+  "TheLeader": {
+    "img": "cardImgDefault.png 5",
+    "Text": "The Royal Road",
+    "type": "Encounters",
+    "Encounters": [
+      {
+        "Type": "Story",
+        "Text": [
+          "Nothing could more fitting now than meeting the mague who started this all, or at least started it all for you.",
+          "A trail of fallen trees and distraught farmers leads you to the thieves who had stolen your amulet!",
+          "It seems their infighting has only gotten worse. The bandits surround their former leader, weapons drawn.",
+          "“Everyone will get their fair share! There’s no need for violence,” the leader implores.",
+          "“Who ever heard of a thief talk about ‘fair shares’?” spits one. “You turn up and boss us around, we’ve barely stabbed anyone! It’s been days since I’ve stabbed someone. Days!”",
+          "The leader notices you approaching and waves you over. “As much as I’d love to continue this discussion regarding stabbings, I’m afraid I have urgent business with my associate here.”"
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "1"
+          }
+        ]
+      },
+      {
+        "Type": "Question",
+        "Answers": [
+          {
+            "Text": "Tell him gold cannot replace the amulet he stole.",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "2"
+              }
+            ]
+          },
+          {
+            "Text": "Tell him he will pay in blood for his thievery.",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "3"
+              }
+            ]
+          }
+        ],
+        "Text": [
+          "As he greets you , he whispers, “Keep me alive and there’ll be plenty of gold for your trouble.”"
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "2"
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "He holds up a finger. \"First rule of negotiation - never let themknow what you want. Kill my associates and I will gladly return youramulet.\"",
+          "Ever reliable, the thieves draw their blades to mug you. The leader hurries away to hide.",
+          "\"Give us your stuff or we'll stab you up!\" growls one of them."
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "4"
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "He grins. \"Here's a thought. Does it have to be my blood specifically? Kill my associates and I will gladly return your amulet.\""
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "5"
+          }
+        ]
+      },
+      {
+        "Type": "Question",
+        "Answers": [
+          {
+            "Text": "Fight",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "5"
+              }
+            ]
+          },
+          {
+            "Text": "Give them all your Food and Gold",
+            "Actions": [
+              {
+                "Action": "Skip",
+                "Skip": "6"
+              }
+            ]
+          }
+        ],
+        "Text": [
+          "You consider your options."
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "5"
+          }
+        ]
+      },
+      {
+        "Combat": "type3",
+        "Type": "Combat",
+        "Success": {
+          "Action": "Skip",
+          "Skip": "7"
+        },
+        "Failure": {
+          "Action": "Skip",
+          "Skip": "7"
+        }
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "\"Wh..what!?\" stutters a confused would-be mugger as you hand over your food and gold.",
+          "\"No-one ever gives us their stuff. What do we do now?\" asks one.",
+          "\"Let's fight him/her anyway. It's been a while since I had a good stabbing.\""
+        ],
+        "Actions": [
+          {
+            "Action": "Skip",
+            "Skip": "5"
+          }
+        ]
+      },
+      {
+        "Type": "Story",
+        "Text": [
+          "Thanks you for playing my game ",
+          " Please leave me a comment for items I can improve on in the game" 
+        ],
+        "Actions": [
+          {
+            "Action": "Done",
+            "Skip": "5"
           }
         ]
       }

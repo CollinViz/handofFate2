@@ -1,0 +1,193 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://2DStratOnCombat/BaseLevel/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://2DStratOnCombat/ForestAmbush/ForestAmbush.tres" type="TileSet" id=2]
+[ext_resource path="res://2DStratOnCombat/ForestAmbush/Overworld_forest_01.png" type="Texture" id=3]
+[ext_resource path="res://2DStratOnCombat/TheRoyalRoad/!$CK_light_2_Glow.png" type="Texture" id=4]
+[ext_resource path="res://2DStratOnCombat/TheRoyalRoad/light.png" type="Texture" id=5]
+[ext_resource path="res://2DStratOnCombat/Thief/Thief.tscn" type="PackedScene" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 48, 55 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 48, 55 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 48, 55 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 55, 48, 55 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 48, 55, 48, 55 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 96, 55, 48, 55 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Skul",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Fire",
+"speed": 5.0
+} ]
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 1767.05, 585.77, -208.946, 589.77, -1202.34, 585.77, -1206.34, 651.77, -194.343, 673.77, 471.657, 685.77, 1769.46, 649.77 )
+
+[node name="TheRoyalRoad" instance=ExtResource( 1 )]
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+modulate = Color( 1, 1, 1, 0.407843 )
+margin_left = -1220.98
+margin_top = -306.086
+margin_right = -220.981
+margin_bottom = 433.914
+rect_scale = Vector2( 3, 3 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="floor" type="TileMap" parent="." index="1"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 48, 48 )
+cell_custom_transform = Transform2D( 48, 0, 0, 48, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 851943, 0, 1, 851944, 0, 1, 851945, 0, 1, 851946, 0, 1, 851947, 0, 1, 851948, 0, 1, 851949, 0, 1, 851950, 0, 1, 851951, 0, 1, 851952, 0, 1, 851953, 0, 1, 851954, 0, 1, 851955, 0, 1, 851956, 0, 1, 851957, 0, 1, 851958, 0, 1, 851959, 0, 1, 851960, 0, 1, 851961, 0, 1, 851962, 0, 1, 851963, 0, 1, 851964, 0, 1, 851965, 0, 1, 851966, 0, 1, 851967, 0, 1, 786432, 0, 1, 786433, 0, 1, 786434, 0, 1, 786435, 0, 1, 786436, 0, 1, 786437, 0, 1, 786438, 0, 1, 786439, 0, 1, 786440, 0, 1, 786441, 0, 1, 786442, 0, 1, 786443, 0, 1, 786444, 0, 1, 786445, 0, 1, 786446, 0, 1, 786447, 0, 1, 786448, 0, 1, 786449, 0, 1, 786450, 0, 1, 786451, 0, 1, 786452, 0, 1, 786453, 0, 1, 786454, 0, 1, 786455, 0, 1, 786456, 0, 1, 786457, 0, 1, 786458, 0, 1, 786459, 0, 1, 786460, 0, 1, 786461, 0, 1, 786462, 0, 1, 786463, 0, 1, 786464, 0, 1, 786465, 0, 1, 786466, 0, 1, 786467, 0, 1, 786468, 0, 1 )
+
+[node name="BackGround" type="Node2D" parent="." index="2"]
+
+[node name="Background" type="TileMap" parent="BackGround" index="0"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 10, 10 )
+format = 1
+tile_data = PoolIntArray( 1376352, 22, 0, 1573019, 20, 0, 1834936, 22, 0, 2228360, 20, 0, 2359287, 17, 0, 2293798, 17, 0, 2818146, 9, 0, 2818155, 9, 0, 2818202, 3, 0, 2948999, 2, 0, 2949007, 2, 0, 3080227, 8, 0, 3211254, 8, 0, 3211309, 26, 0, 3211400, 8, 0, 3342243, 16, 0, 3276950, 16, 0, 3342477, 11, 0, 3473447, 28, 0, 3473451, 26, 0, 3473455, 26, 0, 3473459, 27, 0, 3473532, 23, 0, 3604377, 13, 0, 3604434, 4, 0, 3604444, 4, 0, 3604471, 13, 0, 3539036, 13, 0, 3539077, 10, 0, 3539083, 11, 0, 3539087, 11, 0, 3539091, 12, 0, 3669965, 7, 0, 3669984, 8, 0, 3670015, 8, 0, 3670046, 29, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BackGround" index="1"]
+position = Vector2( -383.401, 567.437 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+animation = "Fire"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="BackGround" index="2"]
+position = Vector2( 1375.92, 567.437 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+animation = "Fire"
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="BackGround" index="3"]
+position = Vector2( 962.968, 552.964 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+animation = "Skul"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="BackGround" index="4"]
+position = Vector2( -56.1989, 539.937 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 7 )
+animation = "Skul"
+frame = 1
+playing = true
+
+[node name="Player" parent="." index="3"]
+position = Vector2( -578.454, 475.937 )
+
+[node name="Thief" parent="AllEnemies" index="0" instance=ExtResource( 6 )]
+position = Vector2( 1447.24, 539.937 )
+scale = Vector2( 2, 2 )
+
+[node name="Thief3" parent="AllEnemies" index="1" instance=ExtResource( 6 )]
+position = Vector2( 1200, 539.937 )
+scale = Vector2( 2, 2 )
+
+[node name="Thief4" parent="AllEnemies" index="2" instance=ExtResource( 6 )]
+position = Vector2( 873.47, 539.937 )
+scale = Vector2( 2, 2 )
+
+[node name="Thief2" parent="AllEnemies" index="3" instance=ExtResource( 6 )]
+position = Vector2( 507.298, 539.937 )
+scale = Vector2( 2, 2 )
+Aggro = true
+
+[node name="Light" type="Node2D" parent="." index="9"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Light" index="0"]
+position = Vector2( 152.908, 201.989 )
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
+
+[node name="Light2D" type="Light2D" parent="Light" index="1"]
+position = Vector2( 1377.3, 552.964 )
+texture = ExtResource( 5 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D4" type="Light2D" parent="Light" index="2"]
+position = Vector2( 924.725, 552.964 )
+texture = ExtResource( 5 )
+texture_scale = 0.75
+energy = 0.7
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D5" type="Light2D" parent="Light" index="3"]
+position = Vector2( -44.5724, 552.964 )
+texture = ExtResource( 5 )
+energy = 0.7
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D2" type="Light2D" parent="Light" index="4"]
+position = Vector2( 345.385, 552.964 )
+texture = ExtResource( 5 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D3" type="Light2D" parent="Light" index="5"]
+position = Vector2( -383.526, 552.964 )
+texture = ExtResource( 5 )
+shadow_enabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Light" index="6"]
+occluder = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}

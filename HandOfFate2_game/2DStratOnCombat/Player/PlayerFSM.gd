@@ -15,6 +15,10 @@ func _ready():
 	#call_deferred("set_state",states.idle)
 
 func _input(event):
+	if event.is_action_released("Block") and state!=states.idle:
+		_tryDoAction(states.idle)
+	if state==states.Block:
+		return
 	if event.is_action_pressed("Doge"):
 		_tryDoAction(states.Doge)
 		#$AnimatedSprite.play("Dash")
@@ -27,8 +31,7 @@ func _input(event):
 	if event.is_action_pressed("attack_light"):
 		_tryDoAction(states.LightAttack)
 		#$AnimatedSprite.play("LightAttack") 
-	if event.is_action_released("Block") and state!=states.idle:
-		_tryDoAction(states.idle)
+	
 
 func _tryDoAction(newState)->void:
 	if state==states.idle:

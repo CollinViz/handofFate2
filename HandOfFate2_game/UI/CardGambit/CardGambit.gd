@@ -59,6 +59,10 @@ func _on_revelCard_timeout():
 
 func showGambit():
 	$CardsAnims.play("default")
+	$Card.CardSelect=false
+	$Card2.CardSelect=false
+	$Card3.CardSelect=false
+	$Card4.CardSelect=false
 	self.visible =true;
 	$Card.CardFace=true
 	$Card2.CardFace=true

@@ -38,6 +38,8 @@ func ResoleAnswer(Answer):
 		"Skip":
 			if Answer.Skip.is_valid_integer():
 				_MoveToEncounterIndex(int(Answer.Skip))
+		"Done":
+			$GameBoard.isActive = true
 
 func _on_CardGambit_CardGambitDone(Answer):
 	$CardGambit.visible=false
@@ -73,6 +75,7 @@ func _on_DialogSystem_questionAnswer(Answer):
 	 
 
 func _MoveToEncounterIndex(Index:int) ->void:
+	
 	_hideAllUI()
 	match _CurrentEncounter[Index].Type:
 		"Question":
@@ -80,18 +83,30 @@ func _MoveToEncounterIndex(Index:int) ->void:
 		"Story":
 			DialogSystem.ShowStory(_CurrentEncounter[Index].Text,_CurrentEncounter[Index].Actions)
 		"Combat":			
-			PlayerData.StartCombat(0,_CurrentEncounter[Index])
+			_ShowCombat(_CurrentEncounter[Index])
+		"Done":
+			$GameBoard.isActive = true
+
+func _ShowCombat(Encounter):
+	var CombatIndex = 0
+	match Encounter.Combat:
+		"type3":
+			CombatIndex=1
+
+	PlayerData.StartCombat(CombatIndex,Encounter)
 
 func _showCardGambit(Answer):
 	$CardGambit.ListOfCardName = Answer.CardGambits.Cards as Array
 	$CardGambit.ActionsOutCome = Answer.CardGambits
 	$CardGambit.showGambit()
+
 func _showCardSelect(Answer):	
 	$CardSelect.ActionsOutCome = Answer.Actions
 	$CardSelect.showCardSelect(Answer.CardSelect as Array)
 	
 
 func _hideAllUI():
+	$GameBoard.isActive = false
 	$DialogSystem.visible=false
 	$CardGambit.visible=false
 
@@ -116,3 +131,8 @@ func _resolveBoon(Answer):
 		"token":
 			print("Token in Inventory")
 	ResoleAnswer(Answer.Actions[0])
+
+
+func _on_Button_pressed():
+	var _y = PlayerData.ManageCardEvent({"ResourceType":"Food","ResourceValue":1})
+	var _p = PlayerData.ManageCardEvent({"ResourceType":"Heath","ResourceValue":-5})

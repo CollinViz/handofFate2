@@ -1,9 +1,7 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var isActive: bool = false setget _setActive
 export var CardType:="" setget _setCardType
 export var CardFace := true  setget _showCardSide
 export var CardSelect := true setget _cardSelect
@@ -24,10 +22,17 @@ func _cardSelect(value:bool) ->void:
 	CardSelect = value
 	if bCardFace == null:
 		return
+	$CardFront/Tween.stop_all()
 	if CardSelect:		
 		bCardFace.mouse_filter = 0
 		bCardBack.mouse_filter = 0 
 		$CardFront/Active.visible=true
+		$CardFront/Tween.interpolate_property($CardFront/Active, "energy", 
+		0, 
+		1.5,
+		3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		$CardFront/Tween.repeat = true
+		$CardFront/Tween.start()
 	else:
 		bCardFace.mouse_filter = 2
 		bCardBack.mouse_filter = 2 
@@ -45,3 +50,13 @@ func _setCardType(value:String):
 
 func _showCardSide(value:bool)->void:
 	CardFace=value
+
+
+func _setActive(value:bool)->void:
+	isActive = value
+	if value == false:
+		$CardFront/Tween.stop_all()
+		$CardFront/Active.visible=false
+	else:
+		if bCardFace.mouse_filter==0:
+			_cardSelect(CardSelect)

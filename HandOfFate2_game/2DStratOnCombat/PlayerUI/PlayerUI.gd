@@ -14,8 +14,8 @@ func _ready():
 
 
 func _PlayerDamage():
-	$Control/HBoxContainer/PlayerHeath.text = "%d/%d" % [PlayerData.PlayerHeath,PlayerData.PlayerHeathMax]
+	$HBoxContainer/PlayerHeath.text = "%d/%d" % [PlayerData.PlayerHeath,PlayerData.PlayerHeathMax]
 
 func _PlayerMultiply():
-	$Control/HBoxContainer/PlayerMultyply.text ="Multiply %d" % PlayerData.PlayerMultiply
+	$HBoxContainer/PlayerMultyply.text ="Multiply %d" % PlayerData.PlayerMultiply
 	

@@ -1,13 +1,13 @@
 extends Actor
 
-var stop = false
+export var stop = false
 
 var intend_heavy = Color(255, 0.0, 0.0, 0.8) #FF0000
 var intend_Light = Color(0, 0.0, 255, 0.8) #FF0000
 var intend_finish = Color(255, 255, 0, 0.8) #FF0000
 var intend_Nothing = Color(0, 0, 0, 0.0) #FF0000
 var intend_Aggro = Color(0, 255, 255, 0.1) #FF0000
-
+var flotationText = preload("res://AllCards/PlayerResource/FloatingText.tscn")
 onready var FSM = $FSM
 
 var _isAnimationPlaying = false
@@ -66,8 +66,19 @@ func takeDamage(NumDamage,_FromObj):
 	FSM.set_state(FSM.states.Hit)
 	Aggro = true
 	HitPoints-=NumDamage
+	showDamageText(NumDamage)
 	if HitPoints<=0:
 		Dead()
+
+
+func showDamageText(NumDamage):
+	var newFlot = flotationText.instance()
+	newFlot.position = position - Vector2(0,65)
+	 
+	newFlot.velocity = Vector2(rand_range(-50, 50), -100)
+	newFlot.modulate = Color(116,1,18, 1)
+	newFlot.text = "-"+str(NumDamage)
+	get_parent().get_parent().add_child(newFlot)
 func DealDamage(BaseDamage):	
 	if TargetingPlayer!=null:
 		TargetingPlayer.takeDamage(BaseDamage,self)

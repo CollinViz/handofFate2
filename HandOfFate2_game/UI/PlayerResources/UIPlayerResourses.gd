@@ -11,10 +11,14 @@ onready var bPlayerGold = $Gold
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var _x = PlayerData.connect("UpdateResource",self,"UpdateResource")
-	UpdateResource()
+	bPlayerHeath.CurrentValue = PlayerData.PlayerHeath
+	bPlayerHeath.MaxValue = PlayerData.PlayerHeathMax
+	bPlayerFood.CurrentValue = PlayerData.PlayerFood
+	bPlayerGold.CurrentValue = PlayerData.PlayerGold
 
 
 func UpdateResource():
+	yield(get_tree().create_timer(1.5), "timeout")
 	bPlayerHeath.CurrentValue = PlayerData.PlayerHeath
 	bPlayerHeath.MaxValue = PlayerData.PlayerHeathMax
 	bPlayerFood.CurrentValue = PlayerData.PlayerFood

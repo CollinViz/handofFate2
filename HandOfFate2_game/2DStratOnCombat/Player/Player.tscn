@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://2DStratOnCombat/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://2DStratOnCombat/Assassin_Male/dash_sword_2.png" type="Texture" id=2]
@@ -26,15 +26,21 @@
 [ext_resource path="res://2DStratOnCombat/Player/PlayerFSM.gd" type="Script" id=24]
 [ext_resource path="res://2DStratOnCombat/Assassin_Male/dead_1.png" type="Texture" id=25]
 [ext_resource path="res://2DStratOnCombat/Player/SFX_-_swoosh_10.wav" type="AudioStream" id=26]
+[ext_resource path="res://2DStratOnCombat/TheRoyalRoad/light2.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.7648, 24.8392 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 2 ) ],
 "loop": false,
-"name": "LightAttack",
+"name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 16 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idel",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 21 ) ],
@@ -52,14 +58,9 @@ animations = [ {
 "name": "Counter",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 19 ) ],
 "loop": false,
-"name": "Dash",
+"name": "LightAttack",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 14 ), ExtResource( 5 ) ],
@@ -67,9 +68,9 @@ animations = [ {
 "name": "HeavyAttack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 16 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "Idel",
+"name": "Run",
 "speed": 5.0
 } ]
 
@@ -124,14 +125,18 @@ texture = ExtResource( 23 )
 script = ExtResource( 24 )
 
 [node name="RightRay" type="RayCast2D" parent="."]
-cast_to = Vector2( 100, 0 )
+cast_to = Vector2( 40, 0 )
 
 [node name="LeftRay" type="RayCast2D" parent="."]
-cast_to = Vector2( -100, 0 )
+cast_to = Vector2( -40, 0 )
 
 [node name="bigHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 26 )
 volume_db = -15.0
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 27 )
+energy = 0.7
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="HitRight" to="." method="_on_HitRight_body_entered"]
 [connection signal="body_exited" from="HitRight" to="." method="_on_HitRight_body_exited"]

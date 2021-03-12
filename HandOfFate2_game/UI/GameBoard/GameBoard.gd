@@ -1,6 +1,7 @@
 extends Control
 
 export var CardList :=["ForestAmbush","AFriendInNeed","FindingForestFolk","TheLeader"] setget _updateCardList
+export var isActive: bool = false setget _setActive
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -110,3 +111,12 @@ func _on_Control_cardClick(CardType, Node):
 	emit_signal("PlayerPawnMoveTo",Node)
 	$Card.CardType= CardType
 	_activeCard(Node.ActiveIndexPos)
+
+
+func _setActive(value:bool)->void:
+	isActive = value
+	for ch in self.get_children():
+		if ch.get_child_count()>1:
+			for cx in ch.get_children():
+				if cx.has_method("_on_Card_gui_input"):
+					cx.isActive = value

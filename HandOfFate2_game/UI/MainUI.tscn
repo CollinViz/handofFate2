@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/MainUI.gd" type="Script" id=1]
 [ext_resource path="res://Font/MainThem.tres" type="Theme" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://2DStratOnCombat/IntroCombate/IntroCombate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/MainMenu/MainMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/Dungeon_-_Oasis_Cave.ogg" type="AudioStream" id=8]
+[ext_resource path="res://2DStratOnCombat/TheRoyalRoad/TheRoyalRoad.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Shader" id=1]
 code = "/*
@@ -241,14 +242,15 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=2]
+render_priority = 127
 shader = SubResource( 1 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.4
 shader_param/scanlines_width = 0.25
 shader_param/grille_opacity = 0.3
-shader_param/resolution = Vector2( 640, 480 )
+shader_param/resolution = Vector2( 600, 480 )
 shader_param/pixelate = true
-shader_param/roll = false
+shader_param/roll = true
 shader_param/roll_speed = 8.0
 shader_param/roll_size = 15.0
 shader_param/roll_variation = 1.8
@@ -274,7 +276,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-game_combat_array = [ ExtResource( 3 ) ]
+game_combat_array = [ ExtResource( 3 ), ExtResource( 9 ) ]
 DealerScene = ExtResource( 4 )
 IntroDealer = ExtResource( 5 )
 IntroCombate = ExtResource( 6 )

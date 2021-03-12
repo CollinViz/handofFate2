@@ -6,7 +6,7 @@ extends Actor
 # var b = "text"
 
 onready var PlayerFSM = $PlayerFSM
-
+var flotationText = preload("res://AllCards/PlayerResource/FloatingText.tscn")
 var _isAnimationPlaying = false
 
 var TargetingEnemy:Actor = null
@@ -43,6 +43,16 @@ func takeDamage(NumDamage,FromObj):
 	else:
 		PlayerFSM.set_state(PlayerFSM.states.Hit)
 	PlayerData.takeDamage(NumDamage,HitPoints,MaxHitPoints)
+	showDamageText(NumDamage)
+func showDamageText(HitPoints):
+	var newFlot = flotationText.instance()
+	newFlot.position = position - Vector2(0,65)
+	 
+	newFlot.velocity = Vector2(rand_range(-50, 50), -100)
+	newFlot.modulate = Color(116,1,18, 1)
+	newFlot.text = "-"+str(HitPoints)
+	get_parent().get_parent().add_child(newFlot)
+
 func _physics_process(_delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
@@ -166,6 +176,7 @@ func DoDead():
 	_isAnimationPlaying = true
 	$AnimatedSprite.play("Dead") 
 func DoBlock():
+	 
 	$AnimatedSprite.play("Idel") 
 	if FacingDirection==1:
 		$ShieldLeft.visible=true

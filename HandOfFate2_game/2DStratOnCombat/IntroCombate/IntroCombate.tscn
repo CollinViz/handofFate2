@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://2DStratOnCombat/IntroCombate/IntroCombate.gd" type="Script" id=1]
 [ext_resource path="res://2DStratOnCombat/IntroCombate/Overworld_forest_01.png" type="Texture" id=2]
 [ext_resource path="res://2DStratOnCombat/Player/Player.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://2DStratOnCombat/baseEnemy/intent.png" type="Texture" id=4]
 
 [node name="IntroCombate" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,12 +25,14 @@ position = Vector2( 324.366, 369.75 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 3 )
 animation = "Idel"
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 296.334, 72.0813 )
 frames = ExtResource( 3 )
 animation = "Run"
+frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -73,17 +76,17 @@ frames = ExtResource( 3 )
 animation = "HeavyAttack"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-margin_left = 470.382
-margin_top = 187.963
-margin_right = 720.382
-margin_bottom = 217.963
-text = "C for block"
+margin_left = 250.014
+margin_top = 91.5518
+margin_right = 500.014
+margin_bottom = 121.552
+text = "W for block"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
-position = Vector2( 516.229, 238.47 )
+position = Vector2( 292.682, 140.999 )
 frames = ExtResource( 3 )
 animation = "Idel"
 
@@ -115,8 +118,6 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
-one_shot = true
-autostart = true
 
 [node name="Button" type="Button" parent="."]
 margin_left = 488.412
@@ -127,5 +128,35 @@ text = "Attack"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+margin_left = 420.0
+margin_top = 223.957
+margin_right = 720.0
+margin_bottom = 263.957
+text = "Enemy Light Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="."]
+margin_left = 420.0
+margin_top = 244.503
+margin_right = 720.0
+margin_bottom = 284.503
+text = "Enemy Heavy Attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 1, 0.890196 )
+position = Vector2( 406.376, 230.465 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 0.890196 )
+position = Vector2( 406.376, 250.561 )
+texture = ExtResource( 4 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

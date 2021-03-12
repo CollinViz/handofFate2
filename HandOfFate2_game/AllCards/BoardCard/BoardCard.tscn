@@ -27,8 +27,13 @@ __meta__ = {
 position = Vector2( 28.6055, 26.4866 )
 scale = Vector2( 0.271937, 0.235428 )
 texture = ExtResource( 4 )
-energy = 0.5
-shadow_enabled = true
+color = Color( 1, 0, 0, 0.890196 )
+energy = 1.5
+shadow_color = Color( 1, 0, 0, 0.890196 )
+
+[node name="Tween" type="Tween" parent="CardFront"]
+repeat = true
+playback/repeat = true
 
 [node name="CardBack" type="TextureRect" parent="."]
 margin_right = 40.0

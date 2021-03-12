@@ -24,7 +24,7 @@ format = 1
 tile_data = PoolIntArray( 1441742, 16, 0, 1376356, 16, 0, 1703883, 9, 0, 1703899, 11, 0, 1703909, 13, 0, 1703930, 9, 0, 1638423, 9, 0, 1638486, 14, 0, 1638496, 11, 0, 1769429, 10, 0, 1704006, 9, 0 )
 
 [node name="Player" parent="." index="2"]
-position = Vector2( 427.392, 230.769 )
+position = Vector2( 841.113, 201.969 )
 
 [node name="TileMap" type="TileMap" parent="." index="3"]
 tile_set = ExtResource( 2 )
@@ -37,8 +37,6 @@ tile_data = PoolIntArray( -131079, 22, 0, -65551, 17, 0, 262121, 17, 0, 262123, 
 scale = Vector2( 2, 2 )
 speed = Vector2( 150, 150 )
 gravity = 2050.0
-MaxHitPoints = 250
-HitPoints = 250
 Aggro = true
 
 [node name="Thief2" parent="AllEnemies" index="1" instance=ExtResource( 3 )]
@@ -46,18 +44,9 @@ position = Vector2( -296.422, 90.2748 )
 scale = Vector2( 2, 2 )
 speed = Vector2( 150, 150 )
 gravity = 2050.0
-Aggro = true
 
-[node name="Thief3" parent="AllEnemies" index="2" instance=ExtResource( 3 )]
-position = Vector2( 600, 111.124 )
+[node name="Thief4" parent="AllEnemies" index="2" instance=ExtResource( 3 )]
+position = Vector2( 226.299, 230.769 )
 scale = Vector2( 2, 2 )
 speed = Vector2( 150, 150 )
 gravity = 2050.0
-Aggro = true
-
-[node name="Thief4" parent="AllEnemies" index="3" instance=ExtResource( 3 )]
-position = Vector2( 831.744, 127.502 )
-scale = Vector2( 2, 2 )
-speed = Vector2( 150, 150 )
-gravity = 2050.0
-Aggro = true

@@ -27,7 +27,8 @@ func _on_checkAllEnenies_timeout():
 		$checkAllEnenies.stop()
 		$Win.play()
 		#PlayerData.EndCombat("Success",CombatOptions)
-		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer.stop() 
+		
  
 func _on_Win_finished():
 	$Win.stop()
