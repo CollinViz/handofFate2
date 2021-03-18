@@ -13,6 +13,8 @@ var TargetingEnemy:Actor = null
 var lastDamageType=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	HitPoints = PlayerData.PlayerHeath
+	MaxHitPoints = PlayerData.PlayerHeathMax
 	PlayerFSM.set_state(PlayerFSM.states.idle)
 	pass # Replace with function body.
 
@@ -51,7 +53,9 @@ func showDamageText(HitPoints):
 	newFlot.velocity = Vector2(rand_range(-50, 50), -100)
 	newFlot.modulate = Color(116,1,18, 1)
 	newFlot.text = "-"+str(HitPoints)
-	get_parent().get_parent().add_child(newFlot)
+	if get_parent() !=null:
+		if get_parent().get_parent()!=null:
+			get_parent().get_parent().add_child(newFlot)
 
 func _physics_process(_delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0

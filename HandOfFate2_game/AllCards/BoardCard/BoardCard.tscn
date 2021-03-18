@@ -36,6 +36,7 @@ repeat = true
 playback/repeat = true
 
 [node name="CardBack" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )

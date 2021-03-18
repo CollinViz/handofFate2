@@ -106,12 +106,25 @@ func getCardLayout()->Array:
 
 
 func _on_Control_cardClick(CardType, Node):
-	if CardType=="":
-		return
+	pass
+	#if CardType=="":
+	#	return
+	#emit_signal("PlayerPawnMoveTo",Node)
+	#$Card.CardType= CardType
+	#_activeCard(Node.ActiveIndexPos)
+func _selectCard(Node):	 
 	emit_signal("PlayerPawnMoveTo",Node)
-	$Card.CardType= CardType
+	$Card.CardType= Node.CardType
 	_activeCard(Node.ActiveIndexPos)
 
+func MoveToActiveCard(CardName:String):
+	for ch in self.get_children():
+		if ch.get_child_count()>1:
+			for cx in ch.get_children():
+				if cx.has_method("_on_Card_gui_input"):
+					if cx.CardType ==CardName:
+						_selectCard(cx)
+						break
 
 func _setActive(value:bool)->void:
 	isActive = value

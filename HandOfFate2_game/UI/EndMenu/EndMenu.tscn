@@ -3,7 +3,7 @@
 [ext_resource path="res://UI/MainMenu/Overworld_forest_01.png" type="Texture" id=1]
 [ext_resource path="res://Font/MainFont_Heading.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/MainMenu/Untitled.png" type="Texture" id=3]
-[ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://UI/EndMenu/EndMenu.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -56,7 +56,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CenterContainer:rect_position")
+tracks/4/path = NodePath("RichTextLabel2:rect_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -65,39 +65,15 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 350 ) ]
+"values": [ Vector2( 340.091, 432.548 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("CenterContainer:rect_rotation")
+tracks/5/path = NodePath("RichTextLabel2:rect_rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("RichTextLabel2:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 340.091, 432.548 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("RichTextLabel2:rect_rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -116,7 +92,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 658.77, 180.786 ), Vector2( 365, 180.786 ) ]
+"values": [ Vector2( 658.77, 180.786 ), Vector2( 391, 185 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("RichTextLabel:rect_position")
@@ -142,30 +118,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -404.231, 424.518 ), Vector2( 340, 432 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("CenterContainer:rect_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 493.838 ), Vector2( 0, 350 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("CenterContainer/Button:rect_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 150, 2 ), Vector2( 150, 2 ) ]
-}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -177,10 +129,10 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0.545098 )
-margin_left = -1154.49
-margin_top = -5.59657
-margin_right = -154.492
-margin_bottom = 734.404
+margin_left = -246.322
+margin_top = -7.27833
+margin_right = 753.678
+margin_bottom = 732.722
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -193,40 +145,23 @@ anchor_bottom = 1.0
 margin_top = 50.0
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]Hand of Fate 2
+bbcode_text = "[center]Thank you for playing
+Hand of Fate 2
  for the [/center]"
-text = "Hand of Fate 2
+text = "Thank you for playing
+Hand of Fate 2
  for the "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = 365.0
-margin_top = 180.786
-margin_right = 965.0
-margin_bottom = 346.786
+margin_left = 391.0
+margin_top = 185.0
+margin_right = 991.0
+margin_bottom = 351.0
 rect_scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -130.0
-margin_bottom = -49.0002
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="CenterContainer"]
-margin_left = 150.0
-margin_top = 2.0
-margin_right = 450.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 300, 75 )
-custom_fonts/font = ExtResource( 2 )
-text = "Start Game"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 margin_left = 340.0
@@ -242,4 +177,3 @@ __meta__ = {
 autoplay = "Intro"
 anims/Default = SubResource( 1 )
 anims/Intro = SubResource( 2 )
-[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_Button_pressed"]

@@ -88,7 +88,6 @@ position = Vector2( -383.401, 567.437 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "Fire"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="BackGround" index="2"]
@@ -96,6 +95,7 @@ position = Vector2( 1375.92, 567.437 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "Fire"
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="BackGround" index="3"]
@@ -103,7 +103,6 @@ position = Vector2( 962.968, 552.964 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "Skul"
-frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="BackGround" index="4"]
@@ -111,7 +110,6 @@ position = Vector2( -56.1989, 539.937 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "Skul"
-frame = 1
 playing = true
 
 [node name="Player" parent="." index="3"]

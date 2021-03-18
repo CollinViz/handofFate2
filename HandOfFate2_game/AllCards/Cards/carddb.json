@@ -375,11 +375,11 @@
       {
         "Type": "Story",
         "Text": [
-          "Select highlight square to move your player token"
+          "You continue on trying to catch up to the leader that stole your amulet"
         ],
         "Actions": [
           {
-            "Action": "Done",
+            "Action": "AFriendInNeed",
             "Skip": "2"
           }
         ]
@@ -427,7 +427,7 @@
         ],
         "Actions": [
           {
-            "Action": "Done"
+            "Action": "FindingForestFolk"
           }
         ]
       }
@@ -494,7 +494,7 @@
             ],
             "Actions": [
               {
-                "Action": "Done"
+                "Action": "TheLeader"
               }
             ]
           }
@@ -507,7 +507,7 @@
         ],
         "Actions": [
           {
-            "Action": "Done"
+            "Action": "TheLeader"
           }
         ]
       }
@@ -629,11 +629,11 @@
         "Combat": "type3",
         "Type": "Combat",
         "Success": {
-          "Action": "Skip",
+          "Action": "TheEnd",
           "Skip": "7"
         },
         "Failure": {
-          "Action": "Skip",
+          "Action": "TheEnd",
           "Skip": "7"
         }
       },

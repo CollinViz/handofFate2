@@ -33,44 +33,43 @@ anchor_right = 1.0
 anchor_bottom = 0.367
 margin_top = 10.0
 margin_right = 28.0
-margin_bottom = 56.24
+margin_bottom = 62.24
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_right = 628.0
-margin_bottom = 125.0
+margin_bottom = 131.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Talking1" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
 margin_right = 64.0
-margin_bottom = 125.0
+margin_bottom = 131.0
 mouse_filter = 2
 texture = ExtResource( 2 )
 
 [node name="StoryText" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
 margin_left = 68.0
 margin_right = 579.0
-margin_bottom = 125.0
+margin_bottom = 131.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
-text = "You finally catch sight of the thieves hacking at a large tree and arguing among themselves."
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
 margin_left = 583.0
 margin_right = 628.0
-margin_bottom = 125.0
+margin_bottom = 131.0
 texture = ExtResource( 3 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
-margin_top = 129.0
+margin_top = 150.0
 margin_right = 628.0
-margin_bottom = 149.0
+margin_bottom = 170.0
 
 [node name="OptionsList" type="VBoxContainer" parent="Panel/VBoxContainer/CenterContainer"]
 margin_left = 223.0

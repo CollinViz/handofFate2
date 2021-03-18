@@ -34,6 +34,15 @@ func StartGame():
 	var x = IntroDealer.instance()
 	$Dealer.add_child(x)
 
+func ShowEndGame():
+	if $Dealer.get_child_count()>0:
+		for c  in $Dealer.get_children():						
+			$Dealer.remove_child(c)
+			c.queue_free()
+	var x = menu_credits.instance()
+	#var x = game_combat_array[0].instance()
+	$Dealer.add_child(x)
+
 func IntroCardRoomDone():
 	if $Dealer.get_child_count()>0:
 		for c  in $Dealer.get_children():			
@@ -46,11 +55,13 @@ func _showDealer(_Outcome:String,_CombatOptions):
 	$DealerMusic.stream_paused=false
 	$Dealer.visible = true
 	$Combat.visible = false
+	$CheckButton.visible = true
 	if $Combat.get_child_count()>0:
 		for c  in $Combat.get_children():			
 			$Combat.remove_child(c)
 
 func _loadCombat(CombatIdx:int,CombatOptions)->void:
+	$CheckButton.visible = false
 	$DealerMusic.stream_paused=true
 	if $Combat.get_child_count()>0:
 		for c  in $Combat.get_children():			
@@ -69,3 +80,7 @@ func _loadCombat(CombatIdx:int,CombatOptions)->void:
 			
 	$Dealer.visible = false
 	$Combat.visible = true
+
+
+func _on_CheckButton_pressed():
+	$CanvasLayer/CRT.visible = $CheckButton.pressed

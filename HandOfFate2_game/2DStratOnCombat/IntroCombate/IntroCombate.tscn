@@ -25,31 +25,30 @@ position = Vector2( 324.366, 369.75 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 3 )
 animation = "Idel"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 296.334, 72.0813 )
 frames = ExtResource( 3 )
 animation = "Run"
-frame = 1
 playing = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 206.9
-margin_top = 32.0361
+margin_top = 29.0361
 margin_right = 456.9
-margin_bottom = 62.0361
-text = "Left and right cursor to move"
+margin_bottom = 59.0361
+text = "Left and right arrows to move"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 margin_left = 477.109
-margin_top = 94.6237
+margin_top = 96.6237
 margin_right = 727.109
-margin_bottom = 124.624
+margin_bottom = 126.624
 text = "E for light attack"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,9 +76,9 @@ animation = "HeavyAttack"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 margin_left = 250.014
-margin_top = 91.5518
+margin_top = 96.5518
 margin_right = 500.014
-margin_bottom = 121.552
+margin_bottom = 126.552
 text = "W for block"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,9 +107,9 @@ frame = 1
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="."]
 margin_left = 203.031
-margin_top = 310.387
+margin_top = 298.978
 margin_right = 503.031
-margin_bottom = 350.387
+margin_bottom = 338.978
 text = "Chain moves to create powerful attacks"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -120,10 +119,10 @@ __meta__ = {
 wait_time = 10.0
 
 [node name="Button" type="Button" parent="."]
-margin_left = 488.412
-margin_top = 420.607
-margin_right = 588.412
-margin_bottom = 470.607
+margin_left = 485.892
+margin_top = 367.06
+margin_right = 585.892
+margin_bottom = 417.06
 text = "Attack"
 __meta__ = {
 "_edit_use_anchors_": false

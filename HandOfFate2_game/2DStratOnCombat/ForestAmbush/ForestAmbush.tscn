@@ -50,3 +50,4 @@ position = Vector2( 226.299, 230.769 )
 scale = Vector2( 2, 2 )
 speed = Vector2( 150, 150 )
 gravity = 2050.0
+Aggro = true

@@ -40,6 +40,21 @@ func ResoleAnswer(Answer):
 				_MoveToEncounterIndex(int(Answer.Skip))
 		"Done":
 			$GameBoard.isActive = true
+		"AFriendInNeed":
+			movePlayerOnGameBoard(Answer.Action)
+		"FindingForestFolk":
+			movePlayerOnGameBoard(Answer.Action)
+		"TheLeader":
+			movePlayerOnGameBoard(Answer.Action)
+		"TheEnd":
+			_showEndScreen()
+
+func _showEndScreen():
+	get_parent().get_parent().ShowEndGame()
+	
+func movePlayerOnGameBoard(CardName:String):
+	$GameBoard.isActive = true
+	$GameBoard.MoveToActiveCard(CardName)
 
 func _on_CardGambit_CardGambitDone(Answer):
 	$CardGambit.visible=false
