@@ -39,10 +39,10 @@ __meta__ = {
 }
 
 [node name="CardText" type="RichTextLabel" parent="."]
-margin_left = 10.5546
-margin_top = 139.0
-margin_right = 102.555
-margin_bottom = 183.445
+margin_left = 10.8519
+margin_top = 132.459
+margin_right = 102.852
+margin_bottom = 187.459
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
